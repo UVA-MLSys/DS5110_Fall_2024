@@ -1,7 +1,0 @@
-# use Python 3.10 or 3.11
-boto3
-black
-numpy
-pandas
-pylint
-pytest
