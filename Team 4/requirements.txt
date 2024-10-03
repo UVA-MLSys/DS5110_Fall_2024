@@ -1,7 +1,10 @@
-# use Python 3.10 or 3.11
-boto3
+#python 3.11
 black
+ipython
+ipykernel
 numpy
+nbqa
 pandas
 pylint
 pytest
+
