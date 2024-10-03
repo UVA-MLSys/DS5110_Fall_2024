@@ -8,6 +8,8 @@ build_venv:
 
 install_kernel: .venv
 	source .venv/bin/activate && python3.11 -m ipykernel kernel --user --name .venv --display-name = "Python (3.11 .venv)"
+	
+# python -m ipykernel install --user --name=PROJECT_venv
 
 .PHONY: tests
 tests: update 
