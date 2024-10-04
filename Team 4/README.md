@@ -25,10 +25,12 @@
     - [About the Data](#about-the-data)
   - [Cloud Architecture Diagram](#cloud-architecture-diagram)
   - [Contributors](#contributors)
-    - [Project Contributors](#project-contributors)
+    - [Proposed Contributing Guidelines](#proposed-contributing-guidelines)
+    - [Core Project Contributors](#core-project-contributors)
     - [Advisors](#advisors)
   - [Testing](#testing)
   - [Project Setup](#project-setup)
+    - [Install Virtual Environment](#install-virtual-environment)
   - [Write Up Details](#write-up-details)
   - [TODO ideas for future builds / features](#todo-ideas-for-future-builds--features)
     - [APIs](#apis)
@@ -40,9 +42,9 @@
 
 ├── README.md
 ├── data # .gitignore
-│   ├── interim
-│   ├── processed
-│   └── raw
+│   ├── final # no more changes
+│   ├── processed # some changes
+│   └── raw # no changes
 │       └── stock_reddit_data
 │           ├── Combined_News_DJIA.csv
 │           ├── RedditNews.csv
@@ -87,11 +89,19 @@ There are three CSV datasets given in the download Reddit, the Dow Jones Average
 
 ## Cloud Architecture Diagram
 
+- created using the AWS PowerPoint assets and Drawio
+
 ![drawio archeiturue diagram](/Team%204/docs/imgs/project_start_modeling.drawio.png)
 
 ## Contributors
 
-### Project Contributors
+### Proposed Contributing Guidelines
+
+* all changes to the code should be done on a pull request
+* keep notebooks as small as possible
+* style should be followed
+
+### Core Project Contributors
 
 | Name | Title |
 |------|------|
@@ -126,8 +136,14 @@ sudo apt-get update
 sudo apt-get install wget unzip make
 ```
 
-TODO: AWS credential how to
-TODO: API key and secret how to
+### Install Virtual Environment
+
+```bash
+make build_venv # will install environment and kernel for notebooks
+```
+
+- TODO: AWS credential how to
+- TODO: API key and secret how to
 
 ## Write Up Details
 
