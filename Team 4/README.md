@@ -86,6 +86,27 @@ There are three CSV datasets given in the download Reddit, the Dow Jones Average
 ├── src # reuseable functions
 └── tests # built using pytest
 ```
+## Tests
+
+the Testing is done with Pytest
+
+```bash
+pytest -vvx /tests # run the testing suite
+pytest -cov # show the coverage report
+```
+
+## Setup
+
+* until we have a docker image these are some things you may need to install, assuming Mac or Windows
+
+```bash
+
+# things you might need on an aws server
+# wget unzip make
+```
+
+TODO: AWS credential how to
+TODO: API key and secret how to
 
 ## Write Up Details
 
@@ -108,7 +129,7 @@ There are three CSV datasets given in the download Reddit, the Dow Jones Average
 ## TODO ideas for future builds / features
 
 general ideas of things we could build out to supplement this POC, general ideas here and nothing set in stone, can adjust we only have a few months.
-
+We probably will want to do the docker one though.
 ### APIs
 
 * integrate Stock API (Yahoo Finance)

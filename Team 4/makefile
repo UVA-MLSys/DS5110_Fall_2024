@@ -7,10 +7,8 @@ build_venv:
 	source .venv/bin/activate && pip install -r requirements.txt;
 
 install_kernel: .venv
-	source .venv/bin/activate && python3.11 -m ipykernel kernel --user --name .venv --display-name = "Python (3.11 .venv)"
+	source .venv/bin/activate && python3.11 python -m ipykernel install --user --name=PROJECT_venv
 	
-# python -m ipykernel install --user --name=PROJECT_venv
-
 .PHONY: tests
 tests: update 
 	source .venv/bin/activate; pytest -vvx tests/
@@ -23,12 +21,7 @@ download_data:
 	unzip data/raw/stock_reddit_data.zip -d data/raw/stock_reddit_data
 	rm -rf data/raw/stock_reddit_data.zip
 
-# do something with the data
-
+# TODO: combine
 
 # TODO: connect to aws
 # connect to aws
-
-
-# things you might need on an aws server
-# wget unzip make
