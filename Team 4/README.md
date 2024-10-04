@@ -34,10 +34,11 @@ There are three CSV datasets given in the download Reddit, the Dow Jones Average
 * `Combined_News_DJIA.csv`:
     >"Date", "Label", and Reddit World News headlines ranging from "Top1" to "Top25".
 
-  >[!NOTE]
-  `Label` or Target is **"1" when DJIA Adj Close value rose or stayed as the same** and **"0" when DJIA Adj Close value decreased**
+  >[!IMPORTANT]
+  >`Label` or Target is `1` when DJIA Adj Close value rose or stayed as the same and `0` when DJIA Adj Close value decreased
 
-## Data Diagram
+## Data Archtecture Diagram
+
 ![drawio archeiturue diagram](/Team%204/docs/imgs/project_start_modeling.drawio.png)
 
 ## Contributors
@@ -80,7 +81,7 @@ There are three CSV datasets given in the download Reddit, the Dow Jones Average
 ├── keys # pem files to connect to AWS
 ├── makefile
 ├── pylintrc # Google Style Guide
-├── requirements.txt
+├── requirements.txt # 3.11
 ├── scripts # automation
 ├── src # reuseable functions
 └── tests # built using pytest
@@ -103,3 +104,28 @@ There are three CSV datasets given in the download Reddit, the Dow Jones Average
 * `Testing`: Describe what testing you did. Describe the unit tests that you wrote. Show a sample run of 1 or 2 of your tests (screen captures or copy-and-paste is fine).
   
 * `Conclusions`: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
+
+## TODO ideas for future builds / features
+
+general ideas of things we could build out to supplement this POC, general ideas here and nothing set in stone, can adjust we only have a few months.
+
+### APIs
+
+* integrate Stock API (Yahoo Finance)
+* integrate Stock Trade API (Alpaca)
+* integrate Reddit API (connect to World News)
+* send out reporter for critical model problems
+
+### Technology
+
+* `airflow` - check data pipeline
+* `mlflow` - place to dump model versions
+* `docker` - container for complete r
+* ci / cd (github actions - do `/tests`)
+* sagemaker - monitor the modeling
+  * threshold to stop model
+
+* `backtesting` - Amazon Forecast - think `sktime`
+* `suggested actions` - amazon bedrock, using Genai
+
+* AWS cost optimizations??
