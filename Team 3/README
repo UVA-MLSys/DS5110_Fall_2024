@@ -1,2 +1,51 @@
-This is the project group for Kanitta, Karthika, Chi, and Aqsa. 
+## BigDataSystems-Fall 2024: Team 3 
 
+## Members: Kanitta, Karthika, Chi, Aqsa
+
+## Introduction: 
+
+We have have a pre-existing AWS Step function to run FMI lambda functions​. With this, we will build a system that can scale​ within a strict budget​. We hope to learn about FMI functions, AWS, and system/data parallelization​. After all this has been completed, we would like to create a meaningful application with data. 
+
+## The Data:
+
+There will be two stages for this project. The first will be benchmarking the system without any data present. The second will use atronomy data to test the AWS system.  
+
+## Experimental Design:
+
+
+
+    Experimental Design: Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output. 
+   
+## Beyond the original specifications: 
+
+
+## Results: 
+
+Below are the time benchmarking for the lambda function with no data is below. 
+
+| Number of Lambda invoked | Execution time(seconds) |
+|--------------------------|:-----------------------:|
+| 2                        |          4.720          |
+| 4                        |          7.566          |
+| 16                       |          5.158          |
+
+
+The cost benchmarking for the lambda function with no data is noted. 
+
+| Item                         | Cost (USD) |
+|------------------------------|------------|
+| Elastic Container Service    | 2.04       |
+| CloudWatch                   | 0.24       |
+| Key Management Service       | 0.03       |
+| Simple Storage Service       | 0.03       |
+| EC2 Container Registry (ECR) | 0.02       |
+| Secrets Manager              | 0.01       |
+| Total                        | 2.37       |
+
+
+Overall, the cost of running a Lambda function on AWS is very small, but it's not nothing. It will be interesting to see how costs and time change with the addition of data. 
+
+## Testing: 
+
+Describe what testing you did. Describe the unit tests that you wrote. Show a sample run of 1 or 2 of your tests (screen captures or copy-and-paste is fine).
+    Conclusions: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
