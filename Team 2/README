@@ -1,1 +1,18 @@
+BigDataSystems-Fall 2024: Team 2
 
+Members: Isidro Pride, Abhinandan Mekap, John Le
+
+Introduction:
+
+The Data: 
+The data set for the project will be an astronomy related data set. The dataset will be provided by the professor. This is the basic data set chosen. As the data has not been recieved, we have not carried out any preprocessing or cleaning of data.
+
+Experimental Design: Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output. 
+
+Beyond the original specifications: Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra-credit portion of this project (see section below).
+
+Results: Display and discuss the results. Describe what you have learned and mention the relevance/significance of the results you have obtained.
+
+Testing: Describe what testing you did. Describe the unit tests that you wrote. Show a sample run of 1 or 2 of your tests (screen captures or copy-and-paste is fine).
+
+Conclusions: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
