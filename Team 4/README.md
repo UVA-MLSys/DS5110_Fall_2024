@@ -1,50 +1,14 @@
 # BigDataSystems-Fall 2024: Team 4
 
-Step Function Place holder Text
+The Goal of this part I of the Semester Project is to Start to build the Infrastructure needed to cheaply and efficiently run our our Semester Projects.
 
-Mils Taylor [video shown in class - requires a login](https://canvas.its.virginia.edu/courses/121565/pages/week-5-chapter-5?module_item_id=1220355)
+This implementation is done with extensive help from Mils Taylor [and his video shown in class - requires a login - should be referenced.](https://canvas.its.virginia.edu/courses/121565/pages/week-5-chapter-5?module_item_id=1220355)
 
->![NOTE]
-
-* limited by the upper run time of an AWS Lambda Function (15 minutes)
-* limited to one script that has to be in an AWS S3 bucket
-* Output is sent to AWS Cloud Watch Log.
-
-## Definitions
-
-Below are some useful definitions related to the Projects Vocabulary.
-
-To get a better sense of FMI consider reading the Wiki.
-[FMI wiki Overview](https://github.com/mstaylor/fmi/wiki/Aws)
-
-
-<dl>
-  <dt>Faas</dt>
-  <dd>Functions as a Service, Serverless Computing in response to events</dd>
-    
-  <dt>FMI</dt>
-  <dd>Faas Message Interface, a library for message passing and collective communication for serverless functions</dd>
-  
-  <dt>Serverless Computing</dt>
-  <dd>Cloud Computing provider (like AWS) handles the machine compute resources on demand</dd>
-
-  <dt>World Size</dt>
-  <dd>Number of Lambda Functions to invoke</dd>
-
-</dl>
-
-
-### State Machines in Step Functions
-
-Taken from the AWS Developer Guide - [here](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-statemachines.html)
-
-> **Step Functions** is based on state machines and tasks.
+>[!NOTE]
 >
-> In Step Functions, **state machines** are called workflows, which are
-> 
->  a **series of event-driven steps**.
-> 
->  Each step in a workflow is called a state.
+>* limited by the upper run time of an AWS Lambda Function (15 minutes)
+>* limited to one script that has to be in an AWS S3 bucket
+>* Output is sent to AWS Cloud Watch Log and should be examined using a log parser
 
 ## Group Members
 
@@ -54,29 +18,99 @@ Taken from the AWS Developer Guide - [here](https://docs.aws.amazon.com/step-fun
 |  Charles S Lotane    |  Data Scientist    |
 |  Ryan Healy     |  Data Scientist    |
 
+## Definitions
+
+Below are some useful definitions related to the Projects Vocabulary.
+
+To get a better sense of FMI consider reading the Wiki.
+[FMI wiki Overview](https://github.com/mstaylor/fmi/wiki/Aws)
+
+<dl>
+  <dt>Faas</dt>
+  <dd>Functions as a Service, Serverless Computing in response to events</dd>
+
+  <dt>FMI</dt>
+  <dd>Faas Message Interface, a library for message passing and collective communication for serverless functions</dd>
+
+  <dt>HPC</dt>
+  <dd>High Performance Cluster, really meaning scaling beyond normal capabilities, think Afton or Rivanna </dd>
+  
+  <dt>Serverless Computing</dt>
+  <dd>Cloud Computing provider (like AWS) handles the machine compute resources on demand</dd>
+
+  <dt>World Size</dt>
+  <dd>Number of Lambda Functions to invoke note: in order of 2s[2,4,6...n]</dd>
+
+</dl>
+
+### State Machines in Step Functions
+
+Taken from the AWS Developer Guide - [here](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-statemachines.html)
+
+> **Step Functions** is based on state machines and tasks.
+>
+> In Step Functions, **state machines** are called workflows, which are
+>
+> a **series of event-driven steps**.
+>
+> Each step in a workflow is called a state.
+
 ## `Introduction`
 
-We hope to learn
-  
+This initial part of the Big Data Systems Semester project, introduces Workflow Orchestration and the key part of any project which is optimizing the Budget.
+
+The goal of the Semester Project is to develop a `Proof of Concept Model`. to do so requires being able to show and mimic the scale while being mindful of costs (large EC2 instances can be costly)
+
+The AWS Lambda environment is highly constrained enviroment but [can cheaply mimic a HPC](https://arxiv.org/abs/2305.08763)
+
+using the infrastructure provided, specifically:
+
+* a deployed Rendezvous sever deployed as `rendezvous.uva-ds5110.com`
+* and a useable Registered Docker Image
+
+These can be seen on the right side of the graph.
+
+We can build the following part of an infrastructure.
+
+![img/Using_Mils_slide_to_show.png](img/using_Mils_slide_to_show.png)
+
+>[!TIP]
+ To run this locally you'll need the Docker Image, if building an Image from scratch or for a new application include make and Python 3.9+
+
+ to get the Python library installed see below
+
+```bash
+# a needed dependency might be the fmi python library
+# see the fmi github
+```
+
 ## `The Data`
 
+This is done infrastructure with the data part to come later, we are interested less so in the data and more the infrastructure here.
+
+For a future build, an example dataset to examine
 [source - AI for Astronomy GitHub](https://github.com/UVA-MLSys/AI-for-Astronomy/tree/main)
 
- Describe your data set and its significance. Where did you obtain this data set from? Why did you choose the data set that you did? Indicate if you carried out any preprocessing/data cleaning/outlier removal, and so on to sanitize your data.
-  
 ## `Experimental Design`
 
- Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output.
+The State Machine took in several parts
+
+including
+
+1) an event (were manually started)
+2) the number of Lambda functions to test (also known as worlds)
+3) a script places on S3 (locally here scripts/fmi-test.py)
+4) settings in a json format (scripts/fmi.json)
+
+The DAG for the job is the following
+
+![test](img/stepfunctions_graph.png)
 
 ## `Beyond the original specifications`
 
- Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra##credit portion of this project (see section below).
-  
-## `Results`
+Multiple World sizes were tested in order to give us an idea of the appropriate scale needed.
 
- Display and discuss the results. Describe what you have learned and mention the relevance/significance of the results you have obtained.
-  
-## `Testing`
+## `Results`
 
 | World Size | Run Time, sec |
 |------|------|
@@ -96,9 +130,9 @@ We hope to learn
   
 ## `Conclusions`
 
- Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
+Using the FMI State Machines we've successfully deployed a cheap infrastructure to build our POC and simulate a real deployment.
 
-<details><summary> META: What should be in each Section</summary>
+<!-- <details><summary> META: What should be in each Section</summary>
 
 [Canvas Source of Project Specs](https://canvas.its.virginia.edu/courses/121565/pages/review-semester-project?module_item_id=1220357)
 
@@ -116,4 +150,4 @@ We hope to learn
   
 * `Conclusions`: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
 
-</details>
+</details> -->
