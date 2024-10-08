@@ -4,13 +4,18 @@ The Goal of this part I of the Semester Project is to Start to build the Infrast
 
 This implementation is done with extensive help from Mils Taylor [and his video shown in class - requires a login - should be referenced.](https://canvas.its.virginia.edu/courses/121565/pages/week-5-chapter-5?module_item_id=1220355)
 
-[Experiment Slide Deck](https://urldefense.com/v3/__https://docs.google.com/presentation/d/1zM3HT7Acrm1_QnIXYtRWA2U9EY-exZmhUDNPxALn-Yk/edit*slide=id.g30938d23901_0_836__;Iw!!OFBJNr4F2A!U9C-FlIxwd20apdomzXIdl8H4K31jl-z9rYPCLpPYNlyn5egtwWjld7yT-fU4PLjtl2ff7hg_69GTO9PYKqv$)
-
->[!NOTE]
+>[!IMPORTANT] EVIDENCE FOR THE BELOW DELIVERABLES IS LINKED 
+[here in the Experiment Presentation Deck](https://urldefense.com/v3/__https://docs.google.com/presentation/d/1zM3HT7Acrm1_QnIXYtRWA2U9EY-exZmhUDNPxALn-Yk/edit*slide=id.g30938d23901_0_836__;Iw!!OFBJNr4F2A!U9C-FlIxwd20apdomzXIdl8H4K31jl-z9rYPCLpPYNlyn5egtwWjld7yT-fU4PLjtl2ff7hg_69GTO9PYKqv$)
 >
->* limited by the upper run time of an AWS Lambda Function (15 minutes)
->* limited to one script that has to be in an AWS S3 bucket
->* Output is sent to AWS Cloud Watch Log and should be examined using a log parser
+>* run the "Step Function" and measure the total execution time and cost by completing the following steps. Submit the results with snapshots of the successful execution of each of the steps as below. 
+>* Create an S3 bucket that will host your python script
+>* Create a folder structure within your S3 bucket
+>* Upload a python script to the created folder
+>* Execute the step function and validate results in the * following log group: /aws/lambda/fmi_executor
+>* Remember to log something that uniquely identifies your execution in the python script. This will help you locate your execution.
+
+
+
 
 ## Group Members
 
@@ -154,6 +159,14 @@ as can be seen in the graph below of World size (Lambda inputs) and Runtime in s
 ![Nick's Runtime Graph](img/runtime_graph.png)
 
 Which provides us with an easy and cheap way to scale.
+
+
+
+>[!NOTE] Additional Notes
+>
+>* limited by the upper run time of an AWS Lambda Function (15 minutes)
+>* limited to one script that has to be in an AWS S3 bucket
+>* Output is sent to AWS Cloud Watch Log and should be examined using a log parser
 
 <!-- <details><summary> META: What should be in each Section</summary>
 
