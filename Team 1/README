@@ -14,7 +14,8 @@ Beyond the original specifications:
 
 Results: 
 
-Testing: 
+Testing: We tested out 3 different world sizes in the executor log group, using wold sizes of 2, 10, and 24. The run times and billing times for the executions of the lambda functions are listed above. There seemed to be not much of an increase in run time when the 
+world size increased from 2 to 10, but a large increase when the world size was raised to 24, along with a large increase in the time for the initialization function to run.
 
 Conclusions: 
 
