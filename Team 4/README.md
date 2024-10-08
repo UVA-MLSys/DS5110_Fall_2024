@@ -4,6 +4,8 @@ The Goal of this part I of the Semester Project is to Start to build the Infrast
 
 This implementation is done with extensive help from Mils Taylor [and his video shown in class - requires a login - should be referenced.](https://canvas.its.virginia.edu/courses/121565/pages/week-5-chapter-5?module_item_id=1220355)
 
+[Experiment Slide Deck](https://urldefense.com/v3/__https://docs.google.com/presentation/d/1zM3HT7Acrm1_QnIXYtRWA2U9EY-exZmhUDNPxALn-Yk/edit*slide=id.g30938d23901_0_836__;Iw!!OFBJNr4F2A!U9C-FlIxwd20apdomzXIdl8H4K31jl-z9rYPCLpPYNlyn5egtwWjld7yT-fU4PLjtl2ff7hg_69GTO9PYKqv$)
+
 >[!NOTE]
 >
 >* limited by the upper run time of an AWS Lambda Function (15 minutes)
@@ -61,14 +63,16 @@ This initial part of the Big Data Systems Semester project, introduces Workflow 
 
 The goal of the Semester Project is to develop a `Proof of Concept Model`. to do so requires being able to show and mimic the scale while being mindful of costs (large EC2 instances can be costly)
 
-The AWS Lambda environment is highly constrained enviroment but [can cheaply mimic a HPC](https://arxiv.org/abs/2305.08763)
+In addition to cost considerations, Lambda Functions can be scaled down to zero when there is zero work while EC2 compute instances need to be managed and shut down /manually destroyed.
 
-using the infrastructure provided, specifically:
+While the AWS Lambda environment is highly constrained environment it [can cheaply mimic a HPC](https://arxiv.org/abs/2305.08763)
+
+some of the infrastructure to run this experiment that is provided by the class include:
 
 * a deployed Rendezvous sever deployed as `rendezvous.uva-ds5110.com`
 * and a useable Registered Docker Image
 
-These can be seen on the right side of the graph.
+These can be seen on the left side of the image below.
 
 We can build the following part of an infrastructure.
 
@@ -118,12 +122,16 @@ Multiple World sizes were tested in order to give us an idea of the appropriate 
 
 ## `Results`
 
+### Time to Run for Different World Sizes
+
 | World Size | Run Time, sec |
 |------|------|
 | 2 | 4.846 |
 | 4 | 4.635 |
 | 20 | 5.029 |
 | 50 | 6.877 |
+
+### Memory Costs
 
 | Memory | Duration | Cost |
 |------|------|------|
@@ -132,11 +140,20 @@ Multiple World sizes were tested in order to give us an idea of the appropriate 
 | 1024 MB | 3.194 s | $0.026830 |
 | 1536 MB | 1.465 s | $0.024638 |
 
-[Google Drive - logs, request access if needed](https://docs.google.com/spreadsheets/d/1bSQFHwop4_Ki_NDmygVB1IjslVpnG32vNwmEyj1rDBA/edit?gid=1467612570#gid=1467612570)
+[Google Drive - copy of referenced logs, request access if needed](https://docs.google.com/spreadsheets/d/1bSQFHwop4_Ki_NDmygVB1IjslVpnG32vNwmEyj1rDBA/edit?gid=1467612570#gid=1467612570)
   
 ## `Conclusions`
 
 Using the FMI State Machines we've successfully deployed a cheap infrastructure to build our POC and simulate a real deployment.
+
+Plus or minus some costs for startup costs and variability in cloud infrastructure start ups the provisioning of these systems is
+$$T_n = \theta(log(n))$$
+
+as can be seen in the graph below of World size (Lambda inputs) and Runtime in seconds
+
+![Nick's Runtime Graph](img/runtime_graph.png)
+
+Which provides us with an easy and cheap way to scale.
 
 <!-- <details><summary> META: What should be in each Section</summary>
 
