@@ -9,6 +9,7 @@ The data set for the project will be an astronomy related data set. The dataset 
 
 Experimental Design: 
 We set up a Step Function within a state machine. This will take input payloads and generate AWS Lambda fmi_executor payloads. 
+We created three State Machine trials/executions​. We used the pre-existing MyStateMachine-e5ydt2afc state machine. We updated 'world_size' parameter within the 'Lamda Init' function for our trials, specifically using 2, 8, and 32​
 
 Beyond the original specifications: Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra-credit portion of this project (see section below).
 
