@@ -82,6 +82,12 @@ We can build the following part of an infrastructure.
 ```bash
 # a needed dependency might be the fmi python library
 # see the fmi github
+git clone https://github.com/mstaylor/fmi
+cd python
+mkdir build
+cd build
+cmake ..
+make
 ```
 
 ## `The Data`
@@ -89,7 +95,7 @@ We can build the following part of an infrastructure.
 This is done infrastructure with the data part to come later, we are interested less so in the data and more the infrastructure here.
 
 For a future build, an example dataset to examine
-[source - AI for Astronomy GitHub](https://github.com/UVA-MLSys/AI-for-Astronomy/tree/main)
+[AI for Astronomy GitHub](https://github.com/UVA-MLSys/AI-for-Astronomy/tree/main)
 
 ## `Experimental Design`
 
