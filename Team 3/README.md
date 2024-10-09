@@ -1,8 +1,10 @@
-BigDataSystems-Fall 2024: Team 3 
+# BigDataSystems-Fall 2024: Team 3 
 
-Members: Kanitta, Karthika, Chi, Aqsa
+# Members: 
 
-Introduction: 
+Kanitta, Karthika, Chi, Aqsa
+
+# Introduction: 
 
 We have a pre-existing AWS Step function to run FMI lambda functions. With this, we will build a system that can scale within a strict budget. We hope to learn about FMI functions, AWS, and system/data parallelization. After all this has been completed, we would like to create a meaningful application with data.  
 
