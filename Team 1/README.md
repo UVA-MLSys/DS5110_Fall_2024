@@ -2,7 +2,7 @@
   <strong>BigDataSystems-Fall 2024: Team 1</strong>
 </p>
 <p align="center">
-## Members
+  <strong>Members</strong><br>
 </p>
 <p align="center">
   <strong>George Shoriz</strong><br>
