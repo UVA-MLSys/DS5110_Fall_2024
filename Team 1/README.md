@@ -1,13 +1,14 @@
+<p align="center">
+  <strong>BigDataSystems-Fall 2024: Team 1</strong>
+</p>
 
-<center>
-  <h1>BigDataSystems-Fall 2024: Team 1</h1>
-
-  <h2>Members</h2>
-  <p><strong>George Shoriz</strong></p>
-  <p><strong>Harold Haugen</strong></p>
-  <p><strong>Dan Anthony</strong></p>
-  <p><strong>Zack Lisman</strong></p>
-</center>
+## Members
+<p align="center">
+  <strong>George Shoriz</strong><br>
+  <strong>Harold Haugen</strong><br>
+  <strong>Dan Anthony</strong><br>
+  <strong>Zack Lisman</strong>
+</p>
 
 ## Introduction
 
