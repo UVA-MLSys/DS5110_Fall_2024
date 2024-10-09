@@ -146,6 +146,8 @@ Multiple World sizes were tested in order to give us an idea of the appropriate 
 | 1536 MB | 1.465 s | $0.024638 |
 
 [Google Drive - copy of referenced logs, request access if needed](https://docs.google.com/spreadsheets/d/1bSQFHwop4_Ki_NDmygVB1IjslVpnG32vNwmEyj1rDBA/edit?gid=1467612570#gid=1467612570)
+
+* an equivalent EC2 instance could be 3-5 dollars and has start up and tear down time and the potential to have unused compute running up a large bill
   
 ## `Conclusions`
 
