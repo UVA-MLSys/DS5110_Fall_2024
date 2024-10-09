@@ -1,8 +1,9 @@
 <p align="center">
   <strong>BigDataSystems-Fall 2024: Team 1</strong>
 </p>
-
+<p align="center">
 ## Members
+</p>
 <p align="center">
   <strong>George Shoriz</strong><br>
   <strong>Harold Haugen</strong><br>
