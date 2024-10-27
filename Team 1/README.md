@@ -43,6 +43,8 @@ The descriptions of the primary metrics used during the evaluation of the predic
 
 The next step is to run the inference.py file and check the resulting graph and evaluation metrics. The python code loads the data and permutes the images before predicting the redshift using the image and magnitudes as the predictor variables.
 
+The fine-tune model is titled "Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt" and is a Convolutional Neural Network. 
+
 ## Beyond the Original Specifications
 
 We went beyond the project's initial scope by experimenting with different `world_size` parameters in *AWS Step Function with Lambda*. This allowed us to observe how changing the number of parallel processes affected both performance and cost efficiency. 
