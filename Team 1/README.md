@@ -21,13 +21,27 @@ We aim to get a better grasp of AWS capabilities and how to use them to optimize
 
 ## The Data
 
-As of *10/6/24*, the dataset has not been provided yet. It is expected that each project group is provided the same dataset to work with. This section will be updated with indications of any preprocessing, data cleaning, or outlier removal applied to the dataset.
+Each group will be working with the resized_inference.pt file that contains 
+
+The model that is used for redshift prediction is pre-trained as "a vision transformer encoder on Sloan Digital Sky Survey (SDSS) images to capture general patterns" and is then fine-tuned "with a specialized architecture for redshift prediction".  
+
+The SDSS dataset includes images with "corresponding magnitude values for the five photometric bands (u,g,r,i,z) and redshift targets".  
 
 ## Experimental Design
 
 The design process begins with a dataset like AI-for-Astronomy. The dataset will be cleaned, with missing values handled and outliers detected to assure quality. The cleaned data is then saved as a CSV file and transferred to an S3 bucket for further processing.
 
 We next create a *Step Function* that calls an *AWS Lambda* function to execute data processing operations like data loading and machine learning model training. Once the model has completed its run, the results are recorded and shown in tables and visualizations for easy interpretation. Throughout the process, testing and validation are carried out to assure the outputs' dependability and correctness.
+
+The descriptions of the primary metrics used during the evaluation of the prediction of redshift are reproduced below from the AI-for-Astronomy README.md file:
+
+- **Mean Absolute Error (MAE)**: Measures the average magnitude of the errors between predicted and true values, providing insight into prediction accuracy.
+- **Mean Square Error (MSE)**: Quantifies the average of squared errors, emphasizing larger deviations to highlight significant prediction errors.
+- **Bias**: Measures the average residuals between predicted and true values, indicating any systematic over- or underestimation in predictions.
+- **Precision**: Represents the expected scatter of errors, reflecting the consistency of the model's predictions.
+- **R² Score**: Evaluates how well the model predicts compared to the mean of true values; a value closer to 1 indicates better predictive performance.
+
+The next step is to run the inference.py file and check the resulting graph and evaluation metrics. The python code loads the data and permutes the images before predicting the redshift using the image and magnitudes as the predictor variables.
 
 ## Beyond the Original Specifications
 
@@ -44,6 +58,12 @@ Testing alternative `world_size` parameters helps determine the best configurati
 | 24         | 0.476                      | 5.040                   | 5.682                        |
 
 Experimenting with different `world_size` values in *AWS Step Functions with Lambda* revealed that increasing parallelism helps scalability but provides diminishing returns in performance beyond a certain point. Execution times varied, with lower `world_size` combinations being more cost-effective and time-efficient. Memory utilization was constant across workloads, allowing for better resource allocation.
+
+The evaluation metrics and setup for the inference.py file:
+
+![Results](inference-results.png "Results")
+
+![Setup](inference-setup.png "Setup")
 
 ## Testing
 
