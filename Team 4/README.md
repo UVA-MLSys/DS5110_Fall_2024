@@ -1,8 +1,16 @@
 # BigDataSystems-Fall 2024: Team 4
 
-The Goal of this part I of the Semester Project is to Start to build the Infrastructure needed to cheaply and efficiently run our our Semester Projects.
+The Semester Project is to build and test the POC infrastructure needed to cheaply and efficiently run the AI-for-Astronomy 
+Inference Model.
 
-This implementation is done with extensive help from Mils Taylor [and his video shown in class - requires a login - should be referenced.](https://canvas.its.virginia.edu/courses/121565/pages/week-5-chapter-5?module_item_id=1220355)
+Most of our testing is done locally on a Mac and on our [class AWS Account Login](https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1#)
+
+>[!NOTE]
+>Access to this Account might not be active after the Fall 2024 Semester is over. 
+
+
+
+
 
 ## Repo structure
 
@@ -50,10 +58,10 @@ This implementation is done with extensive help from Mils Taylor [and his video 
   - [Table of Contents](#table-of-contents)
   - [Group Members](#group-members)
   - [Definitions](#definitions)
-    - [State Machines in Step Functions](#state-machines-in-step-functions)
+  - [1: Step Functions](#1-step-functions)
   - [`Introduction`](#introduction)
-  - [`The Data`](#the-data)
-  - [`Experimental Design`](#experimental-design)
+  - [The Data](#the-data)
+  - [Experimental Design](#experimental-design)
   - [`Beyond the original specifications`](#beyond-the-original-specifications)
   - [`Results`](#results)
     - [Time to Run for Different World Sizes](#time-to-run-for-different-world-sizes)
@@ -110,7 +118,6 @@ To get a better sense of FMI consider reading the Wiki.
 
 </dl>
 
-### State Machines in Step Functions
 
 Taken from the AWS Developer Guide - [here](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-statemachines.html)
 
@@ -118,6 +125,10 @@ Taken from the AWS Developer Guide - [here](https://docs.aws.amazon.com/step-fun
 > a **series of event-driven steps**.
 >
 > Each step in a workflow is called a state.
+
+## 1: Step Functions
+
+This implementation is done with extensive help from Mils Taylor [and his video shown in class - requires a login - should be referenced.](https://canvas.its.virginia.edu/courses/121565/pages/week-5-chapter-5?module_item_id=1220355)
 
 ## `Introduction`
 
@@ -156,14 +167,14 @@ cmake ..
 make
 ```
 
-## `The Data`
+## The Data
 
 This is done infrastructure with the data part to come later, we are interested less so in the data and more the infrastructure here.
 
 For a future build, an example dataset to examine
 [AI for Astronomy GitHub](https://github.com/UVA-MLSys/AI-for-Astronomy/tree/main)
 
-## `Experimental Design`
+## Experimental Design
 
 The State Machine took in several parts
 
@@ -226,12 +237,7 @@ Which provides us with an easy and cheap way to scale.
 >- limited to one script that has to be in an AWS S3 bucket
 >- Output is sent to AWS Cloud Watch Log and should be examined using a log parser
 
-## environments to test deployment
 
-1) local
-2) sagemaker (cpu / gpu)
-3) Rivanna / Afton (HPU)
-4) step functions (run different amounts of step functions)
 
 compare different data sizes, and call sizes of the step functions
 
@@ -255,6 +261,9 @@ The `UVA DS5110` AWS account (TODO: link here) has includes a prebuilt Docker im
 7) Navigate to the AWS Route 53 service, select the uva-ds5110.com hosted zone, and update the rendezvous.uva-ds5110.com record with the IP Address retrieved from the previous step.
    
 ## 3: AI for Astronomy Inference
+
+The code for 
+
 
     inference.png: This contains a visual representation of the inference results.
     Results.json: This JSON file contains the detailed numerical results of the inference.

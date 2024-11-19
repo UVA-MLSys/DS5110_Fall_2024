@@ -25,6 +25,8 @@ can_export_to_pdfs: # note should probably be a script that gets called check fo
     sudo apt-get update;
     sudo apt-get install pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic
 
+generate_file_structure:
+	tree -L 1
 
 # connect to aws
 # check for config file
