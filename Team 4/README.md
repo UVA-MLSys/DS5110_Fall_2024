@@ -4,18 +4,75 @@ The Goal of this part I of the Semester Project is to Start to build the Infrast
 
 This implementation is done with extensive help from Mils Taylor [and his video shown in class - requires a login - should be referenced.](https://canvas.its.virginia.edu/courses/121565/pages/week-5-chapter-5?module_item_id=1220355)
 
+## Repo structure
+
+```bash
+├── AI-for-Astronomy
+│   ├── 99_validations.ipynb
+│   ├── LICENSE
+│   ├── README.md
+│   ├── code
+│   ├── data
+│   └── papers
+├── README.md
+├── data
+│   ├── final
+│   ├── interim
+│   ├── predictions
+│   └── raw
+├── demos
+├── experiments
+│   ├── sql
+│   └── src
+├── img
+│   ├── infrastructure_diagram_raw.png
+│   ├── runtime_graph.png
+│   ├── stepfunctions_graph.png
+│   └── using_Mils_slide_to_show.png
+├── keys
+├── makefile
+├── scratch
+├── scripts
+│   ├── fmi-execute-test.py
+│   ├── fmi-test.py
+│   └── fmi.json
+├── src
+│   └── __pycache__
+└── tests
+    └── __pycache__
+
+```
+
+## Table of Contents
+
+- [BigDataSystems-Fall 2024: Team 4](#bigdatasystems-fall-2024-team-4)
+  - [Repo structure](#repo-structure)
+  - [Table of Contents](#table-of-contents)
+  - [Group Members](#group-members)
+  - [Definitions](#definitions)
+    - [State Machines in Step Functions](#state-machines-in-step-functions)
+  - [`Introduction`](#introduction)
+  - [`The Data`](#the-data)
+  - [`Experimental Design`](#experimental-design)
+  - [`Beyond the original specifications`](#beyond-the-original-specifications)
+  - [`Results`](#results)
+    - [Time to Run for Different World Sizes](#time-to-run-for-different-world-sizes)
+    - [Memory Costs](#memory-costs)
+  - [`Conclusions`](#conclusions)
+  - [environments to test deployment](#environments-to-test-deployment)
+  - [2 rendezvous Server](#2-rendezvous-server)
+  - [3: AI for Astronomy Inference](#3-ai-for-astronomy-inference)
+  - [4 Cosmic AI with Lambda FMI](#4-cosmic-ai-with-lambda-fmi)
+
 >[!IMPORTANT]
 > EVIDENCE FOR THE BELOW DELIVERABLES IS LINKED [here in the Experiment Presentation Deck](https://urldefense.com/v3/__https://docs.google.com/presentation/d/1zM3HT7Acrm1_QnIXYtRWA2U9EY-exZmhUDNPxALn-Yk/edit*slide=id.g30938d23901_0_836__;Iw!!OFBJNr4F2A!U9C-FlIxwd20apdomzXIdl8H4K31jl-z9rYPCLpPYNlyn5egtwWjld7yT-fU4PLjtl2ff7hg_69GTO9PYKqv$)
 >
->* run the "Step Function" and measure the total execution time and cost by completing the following steps. Submit the results with snapshots of the successful execution of each of the steps as below. 
->* Create an S3 bucket that will host your python script
->* Create a folder structure within your S3 bucket
->* Upload a python script to the created folder
->* Execute the step function and validate results in the * following log group: /aws/lambda/fmi_executor
->* Remember to log something that uniquely identifies your execution in the python script. This will help you locate your execution.
-
-
-
+- run the "Step Function" and measure the total execution time and cost by completing the following steps. Submit the results with snapshots of the successful execution of each of the steps as below.
+- Create an S3 bucket that will host your python script
+- Create a folder structure within your S3 bucket
+- Upload a python script to the created folder
+- Execute the step function and validate results in the * following log group: /aws/lambda/fmi_executor
+- Remember to log something that uniquely identifies your execution in the python script. This will help you locate your execution.
 
 ## Group Members
 
@@ -33,6 +90,9 @@ To get a better sense of FMI consider reading the Wiki.
 [FMI wiki Overview](https://github.com/mstaylor/fmi/wiki/Aws)
 
 <dl>
+  <dt>AWS Fargate</dt>
+  <dd>a serverless compute engine that allows users to run containerized applications without having to manage the underlying infrastructure like servers or clusters</dd>
+
   <dt>Faas</dt>
   <dd>Functions as a Service, Serverless Computing in response to events</dd>
 
@@ -55,9 +115,6 @@ To get a better sense of FMI consider reading the Wiki.
 Taken from the AWS Developer Guide - [here](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-statemachines.html)
 
 > **Step Functions** is based on state machines and tasks.
->
-> In Step Functions, **state machines** are called workflows, which are
->
 > a **series of event-driven steps**.
 >
 > Each step in a workflow is called a state.
@@ -74,8 +131,8 @@ While the AWS Lambda environment is highly constrained environment it [can cheap
 
 some of the infrastructure to run this experiment that is provided by the class include:
 
-* a deployed Rendezvous sever deployed as `rendezvous.uva-ds5110.com`
-* and a useable Registered Docker Image
+- a deployed Rendezvous sever deployed as `rendezvous.uva-ds5110.com`
+- and a useable Registered Docker Image
 
 These can be seen on the left side of the image below.
 
@@ -147,7 +204,7 @@ Multiple World sizes were tested in order to give us an idea of the appropriate 
 
 [Google Drive - copy of referenced logs, request access if needed](https://docs.google.com/spreadsheets/d/1bSQFHwop4_Ki_NDmygVB1IjslVpnG32vNwmEyj1rDBA/edit?gid=1467612570#gid=1467612570)
 
-* an equivalent EC2 instance could be 3-5 dollars and has start up and tear down time and the potential to have unused compute running up a large bill
+- an equivalent EC2 instance could be 3-5 dollars and has start up and tear down time and the potential to have unused compute running up a large bill
   
 ## `Conclusions`
 
@@ -162,43 +219,14 @@ as can be seen in the graph below of World size (Lambda inputs) and Runtime in s
 
 Which provides us with an easy and cheap way to scale.
 
-
-
 >[!NOTE]
 > Additional Notes
 >
->* limited by the upper run time of an AWS Lambda Function (15 minutes)
->* limited to one script that has to be in an AWS S3 bucket
->* Output is sent to AWS Cloud Watch Log and should be examined using a log parser
+>- limited by the upper run time of an AWS Lambda Function (15 minutes)
+>- limited to one script that has to be in an AWS S3 bucket
+>- Output is sent to AWS Cloud Watch Log and should be examined using a log parser
 
-<!-- <details><summary> META: What should be in each Section</summary>
-
-[Canvas Source of Project Specs](https://canvas.its.virginia.edu/courses/121565/pages/review-semester-project?module_item_id=1220357)
-
-* `Introduction`: Describe your project scenario. Starting out, what did you hope to accomplish/learn?
-  
-* `The Data`: Describe your data set and its significance. Where did you obtain this data set from? Why did you choose the data set that you did? Indicate if you carried out any preprocessing/data cleaning/outlier removal, and so on to sanitize your data.
-  
-* `Experimental Design`: Describe briefly your process, starting from where you obtained your data all the way to means of obtaining results/output.
-
-* `Beyond the original specifications`: Highlight clearly what things you did that went beyond the original specifications. That is, discuss what you implemented that would count toward the extra-credit portion of this project (see section below).
-  
-* `Results`: Display and discuss the results. Describe what you have learned and mention the relevance/significance of the results you have obtained.
-  
-* `Testing`: Describe what testing you did. Describe the unit tests that you wrote. Show a sample run of 1 or 2 of your tests (screen captures or copy-and-paste is fine).
-  
-* `Conclusions`: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
-
-</details> -->
-
-
-
-## Rendevous Server
-
-![alt text](image.png)
-
-
-## different places to call the functions
+## environments to test deployment
 
 1) local
 2) sagemaker (cpu / gpu)
@@ -206,3 +234,81 @@ Which provides us with an easy and cheap way to scale.
 4) step functions (run different amounts of step functions)
 
 compare different data sizes, and call sizes of the step functions
+
+## 2 rendezvous Server
+
+Taken from [preclass assignment](https://canvas.its.virginia.edu/courses/121565/assignments/571382?module_item_id=1318706)
+
+The Faas Message Interface(FMI) uses the TCPunch
+
+Links to an external site. communication library and Rendezvous server to establish socket communication between ($n$) AWS Lambda functions.
+To run FMI Python scripts, it is necessary to deploy a Rendezvous Server on the public internet.
+
+The `UVA DS5110` AWS account (TODO: link here) has includes a prebuilt Docker image that can be used.
+
+1) go to AWS ECS (Elastic Container Service)
+2) select `rendezvous-tcpunch-fargate-task from the list and select rendezvous-tcpunch-fargate-task:1`
+3) Select the Deploy option, Select the fargate1 cluster and select the launch type as FARGATE.
+4) Scroll down to the Networking section and choose the open access security group as the only security group associated with this task.
+5) Select Create at the bottom of the page
+6) After the Rendezvous server starts, you will need to extract the public ip address from the task. We will use that as the IP address for the A Route 53 record.
+7) Navigate to the AWS Route 53 service, select the uva-ds5110.com hosted zone, and update the rendezvous.uva-ds5110.com record with the IP Address retrieved from the previous step.
+   
+## 3: AI for Astronomy Inference
+
+    inference.png: This contains a visual representation of the inference results.
+    Results.json: This JSON file contains the detailed numerical results of the inference.
+
+Setting the Device
+
+    To run the script on either GPU or CPU, set the --device argument accordingly:
+        For GPU: use 'cuda'
+        For CPU: use 'cpu'
+
+    The default is set to run on CPU. To change the device, modify the --device argument as follows:
+
+    parser.add_argument('--device', type=str, default='cpu', help="Device to run the model on: 'cuda' for GPU or 'cpu' for CPU")
+
+## 4 Cosmic AI with Lambda FMI
+
+An AWS Step function has been developed to facilate orchestration of AI For Astronomy Serverless Inference. Step functions are represented as state machines and tasks. For the DS5110 class, the cosmicai state machine has been created. This step function takes an input payload and generates appropriate AWS Lambda fmi_executor payloads
+
+In this payload we use world_size to represent the number of lambda functions to invoke, bucket to represent the S3 bucket that contains the fmi python script, S3_object_name to represent the path on the S3 bucket where the script can be found, data_path to represent where the resized_inference.pt can be founder, and script to represent the inference script.
+
+
+![FMI image](img/fmi_image.png)
+
+
+```json
+# payload
+{
+  "bucket": "cosmicai2",
+  "world_size": "2",
+  "object_type": "folder",
+  "S3_object_name": "scripts/Anomaly Detection",
+  "data_path": "/tmp/scripts/Anomaly Detection/Inference/resized_inference.pt",
+  "script": "/tmp/scripts/Anomaly Detection/Inference/inference.py"
+}
+```
+
+
+
+
+To edit the input payload:
+
+    Navigate to the AWS Step Function service
+    Select the cosmicai state machine
+    Select edit to edit the state machine
+    Select the Lambda init state
+    On the right, scroll to the payload section
+
+
+Create an S3 bucket that will host your python script
+Create result and scripts folders in this S3 Bucket
+Clone the following repository: https://github.com/mstaylor/AI-for-Astronomy.git
+Links to an external site. (i.e., git clone https://github.com/mstaylor/AI-for-Astronomy.git
+Links to an external site.)
+Copy the Anomaly Detection folder located under code to the S3 bucket
+Execute the step function
+You can view the execution logs by navigating to the following Cloudwatch Log Group: /aws/lambda/cosmic-executor
+Results of the collective reduce operation are post to the S3 Bucket's result folder under 0 (rank zero)
