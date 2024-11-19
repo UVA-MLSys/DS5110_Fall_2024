@@ -190,3 +190,19 @@ Which provides us with an easy and cheap way to scale.
 * `Conclusions`: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
 
 </details> -->
+
+
+
+## Rendevous Server
+
+![alt text](image.png)
+
+
+## different places to call the functions
+
+1) local
+2) sagemaker (cpu / gpu)
+3) Rivanna / Afton (HPU)
+4) step functions (run different amounts of step functions)
+
+compare different data sizes, and call sizes of the step functions
