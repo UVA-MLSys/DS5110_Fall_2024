@@ -5,8 +5,7 @@
 3) Rivanna / Afton (HPU)
 4) step functions (run different amounts of step functions)
 
-## To consider
-
+##  Metrics To Consider
 
 - `total cpu time (second)`: Total time spent on CPU processing during execution, in seconds.
 - `total gpu time (second)`: Total time spent on GPU processing during execution, in seconds.
