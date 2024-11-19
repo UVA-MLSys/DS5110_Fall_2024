@@ -1,14 +1,6 @@
 default:
 	echo @ makefile
 
-# env:
-# 	pip install --upgrade pip;
-# 	python3.11 -m venv env;
-# 	source env/bin/activate && pip install -r requirements.txt;
-
-# install_kernel: env
-# 	source env/bin/activate && python3.11 -m ipykernel --user --name env --display-name = "Python (3.11 env)"
-
 build_venv:
 	pip install --upgrade pip;
 	python3.11 -m venv .venv;

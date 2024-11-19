@@ -19,3 +19,14 @@
 * `Conclusions`: Summarize your findings, explain how these results could be used by others (if applicable), and describe ways you could improve your program. You could describe ways you might like to expand the functionality of your program if given more time.
 
 </details> -->
+
+
+>[!IMPORTANT]
+> EVIDENCE FOR THE BELOW DELIVERABLES IS LINKED [here in the Experiment Presentation Deck](https://urldefense.com/v3/__https://docs.google.com/presentation/d/1zM3HT7Acrm1_QnIXYtRWA2U9EY-exZmhUDNPxALn-Yk/edit*slide=id.g30938d23901_0_836__;Iw!!OFBJNr4F2A!U9C-FlIxwd20apdomzXIdl8H4K31jl-z9rYPCLpPYNlyn5egtwWjld7yT-fU4PLjtl2ff7hg_69GTO9PYKqv$)
+>
+- run the "Step Function" and measure the total execution time and cost by completing the following steps. Submit the results with snapshots of the successful execution of each of the steps as below.
+- Create an S3 bucket that will host your python script
+- Create a folder structure within your S3 bucket
+- Upload a python script to the created folder
+- Execute the step function and validate results in the * following log group: /aws/lambda/fmi_executor
+- Remember to log something that uniquely identifies your execution in the python script. This will help you locate your execution. -->
