@@ -460,7 +460,7 @@ there has already been quite a bit of work done here.
 
 Some Research already done by the TA [aws/](https://github.com/UVA-MLSys/AI-for-Astronomy/tree/main/aws)
 
-Varying data size, areadly available in Class Bucket
+Varying data size, already available in Class Bucket
 
 We run the inference for different sizes to evaluate the scaling performance with increasing data load. This experiment runs with size 1GB, 2GB, 4GB, 6GB, 8GB, 10GB and 12.6GB.
 
