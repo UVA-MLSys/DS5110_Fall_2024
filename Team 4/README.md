@@ -58,12 +58,13 @@ graph LR
       - [Time to Run for Different World Sizes](#time-to-run-for-different-world-sizes)
       - [Memory Costs](#memory-costs)
     - [Step 1: Conclusions](#step-1-conclusions)
-  - [2 Rendezvous Server](#2-rendezvous-server)
+  - [2: Rendezvous Server](#2-rendezvous-server)
     - [Steps Taken](#steps-taken)
   - [3: AI for Astronomy Inference](#3-ai-for-astronomy-inference)
+    - [Validation Plot](#validation-plot)
     - [Setting the Device](#setting-the-device)
-  - [4 Cosmic AI with Lambda FMI](#4-cosmic-ai-with-lambda-fmi)
-  - [5 Parallel Execution](#5-parallel-execution)
+  - [4: Cosmic AI with Lambda FMI](#4-cosmic-ai-with-lambda-fmi)
+  - [5 Parallel Execution and Scale](#5-parallel-execution-and-scale)
 
 ## Group Members
 
@@ -97,7 +98,7 @@ To get a better sense of FMI consider reading the Wiki.
   <dd>Cloud Computing provider (like AWS) handles the machine compute resources on demand</dd>
 
   <dt>World Size</dt>
-  <dd>Number of Lambda Functions to invoke note: in order of 2s[2,4,6...n]</dd>
+  <dd>Number of Lambda Functions to invoke note: in order of 2  --> [2,4,6...n]</dd>
 
 </dl>
 
@@ -110,8 +111,10 @@ Taken from the AWS Developer Guide - [here](https://docs.aws.amazon.com/step-fun
 
 ## 1: Step Functions
 
+Building Block and encompasses the Midterm Review
+
 <details>
-<summary> Click to Explore Step 1 </summary>
+<summary> Expand to Learn More about Step Functions </summary>
 
 This implementation is done with extensive help from Mils Taylor [and his video shown in class - requires a login - should be referenced.](https://canvas.its.virginia.edu/courses/121565/pages/week-5-chapter-5?module_item_id=1220355)
 
@@ -219,7 +222,7 @@ compare different data sizes, and call sizes of the step functions
 
 </details>
 
-## 2 Rendezvous Server
+## 2: Rendezvous Server
 
 <details>
 
@@ -230,7 +233,7 @@ Taken from [preclass assignment](https://canvas.its.virginia.edu/courses/121565/
 The Faas Message Interface(FMI) uses the TCPunch
 
 Links to an external site. communication library and Rendezvous server to establish socket communication between ($n$) AWS Lambda functions.
-To run FMI Python scripts, it is necessary to deploy a Rendezvous Server on the public internet.
+To run `FMI Python scripts` like is needed for the Astronomy Inference at Scale, it is necessary to deploy a Rendezvous Server on the public internet.
 
 The `UVA DS5110` AWS account (TODO: link here) has includes a prebuilt Docker image that can be used.
 
@@ -258,35 +261,77 @@ The output is given here:
 - `inference.png`: This contains a visual representation of the inference results.
 - `Results.json`: This JSON file contains the detailed numerical results of the inference.
 
+
 ```json
-# example of `Results.json` output
-# TODO: replace with a valid run
+{
+     "System": "Windows",
+     "Node Name": "MEL",
+     "Release": "10",
+     "Version": "10.0.22631",
+     "Machine": "AMD64",
+     "Processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+     "GPU Info": "No GPU available",
+     "CPU Info": {
+          "Physical Cores": 8,
+          "Total Cores": 16,
+          "Max Frequency": "2000.00Mhz",
+          "Min Frequency": "0.00Mhz",
+          "Current Frequency": "1808.00Mhz",
+          "Total CPU Usage": "17.8%",
+          "Per Core Usage": [
+               "17.7%",
+               "23.6%",
+               "30.5%",
+               "28.9%",
+               "8.1%",
+               "8.8%",
+               "21.5%",
+               "24.3%",
+               "2.4%",
+               "2.5%",
+               "18.4%",
+               "19.7%",
+               "2.9%",
+               "3.0%",
+               "48.6%",
+               "24.7%"
+          ]
+     },
+     "Memory Info": {
+          "Total Memory": "15.34 GB",
+          "Available Memory": "10.71 GB",
+          "Memory Usage": "30.2%"
+     }
+}
 
 {
-    "total_cpu_time (seconds)": 5.814478928000014,
-    "total_cpu_memory (MB)": 14320.256568,
-    "execution_time (seconds/batch)": 2.907239464000007,
-    "num_batches": 2,
-    "batch_size": 512,
-    "device": "cpu",
-    "throughput_bps": 28910559.67036082,
-    "sample_persec": 176.11208376194455,
-    "cpu_info": {
-        "processor": "x86_64",
-        "architecture": [
-            "64bit",
-            "ELF"
-        ],
-        "machine": "x86_64",
-        "system": "Linux",
-        "platform": "Linux-5.10.227-239.884.amzn2.x86_64-x86_64-with-glibc2.35"
-    },
-    "ram_info (GB)": 10.455680847167969,
-    "avg_profile": "<FunctionEventAvg key=Total self_cpu_time=2.229s cpu_time=375.273us  self_cuda_time=0.000us cuda_time=0.000us input_shapes= cpu_memory_usage=14320256568 cuda_memory_usage=0>",
-    "self_cpu_memory (MB)": 10.510336
+     "total execution time": 131.83914375305176,
+     "throughput": 31118881.716076322,
+     "average execution time (milliseconds) per batch": 168.80812260313925,
+     "batch size": 32,
+     "number of batches": 781,
+     "device": "cpu",
+     "MAE": 0.01336825733453455,
+     "MSE": 0.0003767368048620285,
+     "Bias": 0.002923277978249915,
+     "Precision": 0.011839682161808014,
+     "R2": 0.9684378430247307
+}
+
+{
+     "MAE": 0.012519702469931539,
+     "MSE": 0.0002972779517542907,
+     "Bias": 0.002024519662331888,
+     "Precision": 0.011360233630985022,
+     "R2": 0.9746744122000114
 }
 
 ```
+
+### Validation Plot
+
+![Prediction Validation Plot](<AI-for-Astronomy/code/Anomaly Detection/Plots/inference.png>)
+
 
 ### Setting the Device
 
@@ -303,7 +348,7 @@ To change the device, modify the --device argument as follows:
 
 </details>
 
-## 4 Cosmic AI with Lambda FMI
+## 4: Cosmic AI with Lambda FMI
 
 <details>
 <summary>Expand to Learn More about Cosmic AI and the Lambda FMI</summary>
@@ -349,8 +394,42 @@ Execute the step function
 You can view the execution logs by navigating to the following Cloudwatch Log Group: /aws/lambda/cosmic-executor
 Results of the collective reduce operation are post to the S3 Bucket's result folder under 0 (rank zero)
 
-<details>
+```json
+# example of `Results.json` output
+# TODO: replace with a valid run
 
-## 5 Parallel Execution
+{
+    "total_cpu_time (seconds)": 5.814478928000014,
+    "total_cpu_memory (MB)": 14320.256568,
+    "execution_time (seconds/batch)": 2.907239464000007,
+    "num_batches": 2,
+    "batch_size": 512,
+    "device": "cpu",
+    "throughput_bps": 28910559.67036082,
+    "sample_persec": 176.11208376194455,
+    "cpu_info": {
+        "processor": "x86_64",
+        "architecture": [
+            "64bit",
+            "ELF"
+        ],
+        "machine": "x86_64",
+        "system": "Linux",
+        "platform": "Linux-5.10.227-239.884.amzn2.x86_64-x86_64-with-glibc2.35"
+    },
+    "ram_info (GB)": 10.455680847167969,
+    "avg_profile": "<FunctionEventAvg key=Total self_cpu_time=2.229s cpu_time=375.273us  self_cuda_time=0.000us cuda_time=0.000us input_shapes= cpu_memory_usage=14320256568 cuda_memory_usage=0>",
+    "self_cpu_memory (MB)": 10.510336
+}
+
+```
+
+
+
+</details>
+
+## 5 Parallel Execution and Scale
 
 Now that we have a Baseline its time to test at scale
+
+there has already been quite a bit of work done here. 
