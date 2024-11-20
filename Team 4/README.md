@@ -6,10 +6,12 @@
 The Semester Project is to build and test the POC infrastructure needed to cheaply and efficiently run the AI-for-Astronomy
 Inference Model.
 
-Development done locally on a Mac and at scale with Linux on our [class AWS Account](https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1#)
+Development done locally using both Windows/Mac and tested at scale using Linux on our [class AWS Account](https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1#)
 
 >[!NOTE]
 >Access to this Account might not be active after the Fall 2024 Semester is over.
+
+Code style and choices are for our code not the submodule `AI-for-Astronomy` which is separately maintained.
 
 ## Progress
 
@@ -64,7 +66,10 @@ graph LR
     - [Validation Plot](#validation-plot)
     - [Setting the Device](#setting-the-device)
   - [4: Cosmic AI with Lambda FMI](#4-cosmic-ai-with-lambda-fmi)
-  - [5 Parallel Execution and Scale](#5-parallel-execution-and-scale)
+    - [4 Steps](#4-steps)
+    - [4 Results](#4-results)
+  - [5: Parallel Execution and Scale](#5-parallel-execution-and-scale)
+    - [Baseline](#baseline)
 
 ## Group Members
 
@@ -261,7 +266,6 @@ The output is given here:
 - `inference.png`: This contains a visual representation of the inference results.
 - `Results.json`: This JSON file contains the detailed numerical results of the inference.
 
-
 ```json
 {
      "System": "Windows",
@@ -332,7 +336,6 @@ The output is given here:
 
 ![Prediction Validation Plot](<AI-for-Astronomy/code/Anomaly Detection/Plots/inference.png>)
 
-
 ### Setting the Device
 
 To run the script on either GPU or CPU, set the --device argument accordingly:
@@ -378,21 +381,42 @@ In this payload we use world_size to represent the number of lambda functions to
 
 To edit the input payload:
 
-    Navigate to the AWS Step Function service
-    Select the cosmicai state machine
-    Select edit to edit the state machine
-    Select the Lambda init state
-    On the right, scroll to the payload section
+- Navigate to the AWS Step Function service
+- Select the `cosmicai` state machine
+- Select edit to edit the state machine
+- Select the Lambda init state
+- On the right, scroll to the payload section
 
-Create an S3 bucket that will host your python script
-Create result and scripts folders in this S3 Bucket
-Clone the following repository: <https://github.com/mstaylor/AI-for-Astronomy.git>
-Links to an external site. (i.e., git clone <https://github.com/mstaylor/AI-for-Astronomy.git>
-Links to an external site.)
-Copy the Anomaly Detection folder located under code to the S3 bucket
+### 4 Steps
+
+1) Create an S3 bucket that will host your python script
+
+- the one we created is `team4-cosmicai`
+
+2) Create `result` and `scripts` folders in this S3 Bucket
+
+3) Clone the following repository
+
+```bash
+git clone https://github.com/mstaylor/AI-for-Astronomy.git #fork
+
+```
+
+4) Copy the Anomaly Detection folder located under code to the S3 bucket
 Execute the step function
-You can view the execution logs by navigating to the following Cloudwatch Log Group: /aws/lambda/cosmic-executor
-Results of the collective reduce operation are post to the S3 Bucket's result folder under 0 (rank zero)
+
+5) view the execution logs by navigating to the following Cloudwatch Log Group: `/aws/lambda/cosmic-executor`
+
+Results of the collective reduce operation are post to the S3 Bucket's result folder under 0 (rank zero), you can see an example below
+
+```json
+ "data_map": {
+        "0": "Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt",
+        "1": "data/1.pt"
+    }
+```
+
+### 4 Results
 
 ```json
 # example of `Results.json` output
@@ -424,12 +448,20 @@ Results of the collective reduce operation are post to the S3 Bucket's result fo
 
 ```
 
-
-
 </details>
 
-## 5 Parallel Execution and Scale
+## 5: Parallel Execution and Scale
 
 Now that we have a Baseline its time to test at scale
 
-there has already been quite a bit of work done here. 
+there has already been quite a bit of work done here.
+
+### Baseline
+
+Some Research already done by the TA [aws/](https://github.com/UVA-MLSys/AI-for-Astronomy/tree/main/aws)
+
+Varying data size, areadly available in Class Bucket
+
+We run the inference for different sizes to evaluate the scaling performance with increasing data load. This experiment runs with size 1GB, 2GB, 4GB, 6GB, 8GB, 10GB and 12.6GB.
+
+TODO: fill out results and runs
