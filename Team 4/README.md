@@ -29,7 +29,7 @@ graph LR
 ## Repo structure
 
 ```bash
-├── AI-for-Astronomy # model we explore (run git pull)
+├── AI-for-Astronomy # model we explore (run git pull) main/
 ├── README.md
 ├── data # local data (.gitignore)
 ├── demos # notebooks to show off
@@ -42,6 +42,7 @@ graph LR
 ├── scripts # to be run
 ├── src 
 └── tests # uses pytest see (test.md)
+└── requirements.txt # uses Python 3.11
 ```
 
 ## Table of Contents
