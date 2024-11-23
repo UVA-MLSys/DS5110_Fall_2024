@@ -1,0 +1,23 @@
+{
+    "total_cpu_time (seconds)": 5.806345376000015,
+    "total_cpu_memory (MB)": 14320.256568,
+    "execution_time (seconds/batch)": 2.9031726880000077,
+    "num_batches": 2,
+    "batch_size": 512,
+    "device": "cpu",
+    "throughput_bps": 28951057.69884529,
+    "sample_persec": 176.358782278541,
+    "cpu_info": {
+        "processor": "x86_64",
+        "architecture": [
+            "64bit",
+            "ELF"
+        ],
+        "machine": "x86_64",
+        "system": "Linux",
+        "platform": "Linux-5.10.227-239.884.amzn2.x86_64-x86_64-with-glibc2.35"
+    },
+    "ram_info (GB)": 10.455680847167969,
+    "avg_profile": "<FunctionEventAvg key=Total self_cpu_time=2.219s cpu_time=374.748us  self_cuda_time=0.000us cuda_time=0.000us input_shapes= cpu_memory_usage=14320256568 cuda_memory_usage=0>",
+    "self_cpu_memory (MB)": 10.510336
+}
