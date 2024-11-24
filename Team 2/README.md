@@ -35,10 +35,10 @@ We definitely noticed a correlation between Lambda Function and Duration. Howeve
 
 ### Cosmic AI Results
 
-#### World Size  |  Duration
--------------------------------
-2                   |  13.827
-4                   |  20.179
-8                   |  16.787
+#### World Size  |  Duration (cpu)  |  Duration (gpu)
+-----------------|------------------|-----------------
+2                |  10.695          |  5.749
+4                |  14.895          |  5.762
+8                |  Error           |  44.717
 
 Duration increased as we increased the world size for the Cosmic AI function.
