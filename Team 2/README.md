@@ -41,3 +41,4 @@ We definitely noticed a correlation between Lambda Function and Duration. Howeve
 4                   |  20.179
 8                   |  16.787
 
+Duration increased as we increased the world size for the Cosmic AI function.
