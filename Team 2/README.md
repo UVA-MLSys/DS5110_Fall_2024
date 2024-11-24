@@ -8,8 +8,11 @@
 The data set for the project will be an astronomy related data set. The dataset will be provided by the professor. This is the basic data set chosen. The data can be located at the follow Github repository: https://github.com/mstaylor/AI-for-Astronomy.git. The dataset consists of images collected from either satellites or telescopes. Most images can be categorized as galaxies, stars, or quasars.  
 
 ## Experimental Design: 
-We set up a Step Function within a state machine. This will take input payloads and generate AWS Lambda fmi_executor payloads. 
-We created three State Machine trials/executions​. We used the pre-existing MyStateMachine-e5ydt2afc state machine. We updated 'world_size' parameter within the 'Lamda Init' function for our trials, specifically using 2, 8, and 32​
+We set up Step Functions within a state machine. These input payloads and generate AWS Lambda fmi_executor payloads. Our first state machine trials were with the pre-existing MyStateMachine-e5ydt2afc state machine.
+We created three State Machine trials/executions​ and updated 'world_size' parameter within the 'Lamda Init' function for our trials, specifically using 2, 8, and 32​.
+
+This was the original trials just to get familiar with step function and state machines. We later performed this on the actual astronomy data. We cloned the cosmicai state function and executed the state machines on the astronomy data. We did three initial trials with different world sizes and measured changes in duration and other metrics.
+
 
 ## Beyond the original specifications:
 We used both the CPU and GPU for our duration measurements for CosmicAI.
