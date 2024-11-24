@@ -34,10 +34,16 @@ Conclusions: 
 We definitely noticed a correlation between Lambda Function and Duration. However, understanding how the metrics for cloudwatch calculations would be helpful. We also obtained some costs from the billing and colst management tool on AWS. However, finding a way to measure the costs of individual executions would be helpful if possible.
 
 ### Cosmic AI Results
+#### Duration
 World Size       |  Duration (cpu)  |  Duration (gpu)
 -----------------|------------------|-----------------
-2                |  10.695          |  5.749
-4                |  14.895          |  5.762
-8                |  Error           |  44.717
+1                |  10.695          |  5.749
+10               |  14.895          |  5.762
+100              |  Error           |  44.717
 
-Duration increased as we increased the world size for the Cosmic AI function.
+We cloned the cosmic ai state machine and ran executions with world sizes of 1, 10, and 100, for both cpu and gpu. We had to update inference.py to use cuda instead of cpu for the device. Duration increased as we increased the world size for both cpu and gpu. CPU seemed to have issues running larger world sizes, as a world size of 100 threw an error. However, GPU ran perfectly fine. The duration difference between a world size of 10 and a world size of 100 was quite drastic.
+
+#### Metrics for world size 1 and world size 10
+ A computer screen shot of white text
+
+Description automatically generated
