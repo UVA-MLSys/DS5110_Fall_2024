@@ -44,6 +44,6 @@ World Size       |  Duration (cpu)  |  Duration (gpu)
 We cloned the cosmic ai state machine and ran executions with world sizes of 1, 10, and 100, for both cpu and gpu. We had to update inference.py to use cuda instead of cpu for the device. Duration increased as we increased the world size for both cpu and gpu. CPU seemed to have issues running larger world sizes, as a world size of 100 threw an error. However, GPU ran perfectly fine. The duration difference between a world size of 10 and a world size of 100 was quite drastic.
 
 #### Metrics for world size 1 and world size 10
- A computer screen shot of white text
+![image](https://github.com/user-attachments/assets/016dfbc4-0486-4d9c-bcc9-ae8a86fd1f1f)
+![Screenshot 2024-11-24 140939](https://github.com/user-attachments/assets/c22e8bf0-31c8-4f92-89b4-dafc40f2854a)
 
-Description automatically generated
