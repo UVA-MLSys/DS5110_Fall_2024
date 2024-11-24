@@ -17,8 +17,8 @@ We used results from the step function execution, but also cloudwatch results.
 # Results:
 
 ### Basic DS5110 State Machine
-#### Lambda Functions  |  Duration
--------------------------------
+Lambda Functions    |  Duration
+--------------------|------------
 2                   |  4.926
 8                   |  6.573
 32                  |  6.615
