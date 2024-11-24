@@ -12,7 +12,7 @@ We set up a Step Function within a state machine. This will take input payloads 
 We created three State Machine trials/executions​. We used the pre-existing MyStateMachine-e5ydt2afc state machine. We updated 'world_size' parameter within the 'Lamda Init' function for our trials, specifically using 2, 8, and 32​
 
 # Beyond the original specifications:
-We used results from the step function execution, but also cloudwatch results.
+We used both the CPU and GPU for our duration measurements for CosmicAI.
 
 # Results:
 
