@@ -30,3 +30,12 @@ We didn't do any additional testing. Our team simply obtaining results of the du
 Conclusions: 
 
 We definitely noticed a correlation between Lambda Function and Duration. However, understanding how the metrics for cloudwatch calculations would be helpful. We also obtained some costs from the billing and colst management tool on AWS. However, finding a way to measure the costs of individual executions would be helpful if possible.
+
+# Cosmic AI Results
+
+## World Size  |  Duration
+-------------------------------
+2                   |  13.827
+4                   |  20.179
+8                   |  16.787
+
