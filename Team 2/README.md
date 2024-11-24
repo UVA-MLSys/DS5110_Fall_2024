@@ -1,8 +1,8 @@
-BigDataSystems-Fall 2024: Team 2
+# BigDataSystems-Fall 2024: Team 2
 
-Members: Isidro Pride, Abhinandan Mekap, John Le
+# Members: Isidro Pride, Abhinandan Mekap, John Le
 
-Introduction:
+# Introduction:
 
 # The Data: 
 The data set for the project will be an astronomy related data set. The dataset will be provided by the professor. This is the basic data set chosen. The data can be located at the follow Github repository: https://github.com/mstaylor/AI-for-Astronomy.git. The dataset consists of images collected from either satellites or telescopes. Most images can be categorized as galaxies, stars, or quasars.  
