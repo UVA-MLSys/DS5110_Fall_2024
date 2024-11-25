@@ -1,9 +1,7 @@
-import math
-import numpy as np
-import torch, json
 import matplotlib.pyplot as plt
+import numpy as np
+import json
 from scipy.stats import gaussian_kde
-from sklearn.metrics import r2_score
 
 def plot_density(x, y, save_plot_path):
     x = np.array(x)
