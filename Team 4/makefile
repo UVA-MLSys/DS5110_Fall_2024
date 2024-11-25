@@ -12,6 +12,8 @@ build_venv:
 tests: update # only non integration tests
 	source env/bin/activate; pytest -vvx tests/
 
+update_AI:
+	cd AI-for-Astronomy && git pull
 
 # can_export_to_pdfs: # note should probably be a script that gets called check for MAC
 #     conda install nbconvert;
