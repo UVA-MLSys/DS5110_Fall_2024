@@ -12,17 +12,11 @@ build_venv:
 tests: update # only non integration tests
 	source env/bin/activate; pytest -vvx tests/
 
-update_AI:
+update_Astronomy_AI:
 	cd AI-for-Astronomy && git pull
 
-# can_export_to_pdfs: # note should probably be a script that gets called check for MAC
-#     conda install nbconvert;
-#     sudo apt-get update;
-#     sudo apt-get install pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic;
+install_package:
+	pip install -e .
 
-# generate_file_structure:
-# 	tree -L 1
-
-# connect to aws
-# check for config file
-# 
+generate_file_structure:
+	tree -L 1
