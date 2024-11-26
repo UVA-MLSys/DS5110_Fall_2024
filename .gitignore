@@ -167,9 +167,11 @@ keys/
 #scratch files
 scratch/
 
-#data directory
-models/
-data/
+#data directory - don't share data and model
+Team 4/data/models/
+Team 4/data/raw/
+
+# do want to share ouput
 
 # test cache
 .pytest_cache
