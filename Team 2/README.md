@@ -3,6 +3,7 @@
 ## Members: Isidro Pride, Abhinandan Mekap, John Le
 
 ## Introduction:
+The goal of the project is redshift prediction using SDSS Data and AI-for-Astronomy Pipeline with data from Sloan Digital Sky Survey (SDSS).
 
 ## The Data: 
 The data set for the project will be an astronomy related data set. The dataset will be provided by the professor. This is the basic data set chosen. The data can be located at the follow Github repository: https://github.com/mstaylor/AI-for-Astronomy.git. The dataset consists of images collected from either satellites or telescopes. Most images can be categorized as galaxies, stars, or quasars.  
