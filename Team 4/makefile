@@ -1,8 +1,8 @@
-.PHONY: tests
+.PHONY: tests install_cosmicai lint format clean
 
 # useful for debugging
-default:
-	echo @ makefile
+# default:
+# 	echo @ makefile
 
 ## builds the virtual environment and attaches it to the ipykernel to be used
 build_venv:
@@ -12,18 +12,18 @@ build_venv:
 	source .venv/bin/activate && pip install ipykernel
 	source .venv/bin/activate && python3.11 -m ipykernel install --user --name=.venv;
 
-# source env/bin/activate; pytest -vvx tests/  # boto is being weird
+# boto is being weird
 ## runs the package tests
-tests: update # only non integration tests
-	source env/bin/activate; pytest tests -vvx -p no:warnings
+tests: # only non integration tests
+	source .venv/bin/activate && pytest tests -vvx -p no:warnings
 
 ## updates the astronomy ai github
-update_Astronomy_AI:
+update_Astronomy_AI_git:
 	cd AI-for-Astronomy && git pull
 
 ## install the prediction function to be used elsewhere
-install_package:
-	pip install -e .
+install_cosmicai:
+	source .venv/bin/activate && pip install -e .
 
 # only useful for markdown readme
 generate_file_structure:
@@ -31,11 +31,11 @@ generate_file_structure:
 
 ## runs Google Style Guide Linter
 lint:
-	pylint /src
+	pylint src/cosmicai/*.py
 
 ## runs black to auto format code
-format:
-	black /src
+auto_format:
+	black src/
 
 ## clean up the repo
 clean:
