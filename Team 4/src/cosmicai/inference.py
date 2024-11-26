@@ -1,57 +1,92 @@
+import sys
 from typing import Self
 
-# from dotenv import dotenv_values
-
+import dotenv
 import torch
 from torch.profiler import profile, record_function, ProfilerActivity
 from torch.utils.data import DataLoader
 
-
-
-
-# import Plot_Redshift as plt_rdshft
 import cosmicai.Plot_Redshift as plt_rdshift
 
-# config: dict = dotenv_values(".env")
+sys.path.append('..') # to get the Normal Cell in 
 
-# batch sizes
-# batch sizes to try: small 8, 16, 32, 64
-# batch sizes to try: medium 128, 256
-# batch sizes to try: small
-
-
+## TODO: sys.append when looking for module
 
 class CosmicAI:
     def __init__(self, batch_size=512, device="cpu") -> Self:
         self.batch_size = batch_size
-        # self.data = torch.load("../data/raw/Inference.pt")  # can change when testing new data 'resized_inference.pt'
         self.device = device
-        # self.model_path = torch.load("../data/models/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt").model.module.eval()  # 'Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt'
         self.save_path = "Plots/"
-        #self.real_redshift = self.data[:][2].to("cpu")
+
+        config_file_path = dotenv.find_dotenv()  # search project directory to find (looking for .env)
+        config:dict  = dotenv.dotenv_values(config_file_path)
+
+        if len(config) < 1:
+            raise Exception("config file empty, couldn't find it!")
 
         if self.device not in ["cpu", "gpu"]:
-            raise "device can only be cpu or gpu"
-        
-        # TODO: load dot_env files in as default
-        # TODO: set data to just be path and actually call functions to load it
-        # TODO: If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+            raise Exception("device can only be cpu or gpu")
 
-    def set_data(self, new_data_path:str) -> Self:
-        self.data = torch.load(new_data_path)
+        self.data_path = config["default_data_path"]
+        self.model_path = config["default_model_path"]
 
-    def run_inference(self, save_plot = False) -> dict:
+        self.data = None
+        self.model = None
+
+    def set_batch_size(self, new_batch_size) -> Self:
+        """update batch_size parameter"""
+        self.batch_size = new_batch_size
+
+    def set_data_path(self, new_data_path: str) -> Self:
+        """update the data used"""
+        self.data_path = new_data_path
+
+    def load_data(self) -> Self:
+        """loads the data, only accepts pytorch .pt"""
+        if self.device == "gpu":
+            self.data = torch.load(self.data_path)
+
+        elif self.device == "cpu":
+            self.data = torch.load(
+                self.data_path, map_location=torch.device(self.device)
+            )
+
+        print(f"loading data from - {self.data_path}")
+
+    def load_model(self) -> Self:
+        """loads the data and model"""
+        if self.device == "gpu":
+            self.model = torch.load(self.model_path).model.module.eval()
+
+        elif self.device == "cpu":
+            self.model = torch.load(
+                self.model_path, map_location=torch.device(self.device)
+            ).module.eval()
+
+        print(f"loading the model from  {self.model_path}")
+
+    def run_inference(self, save_plot=False) -> dict:
         redshift_analysis = []
-        total_time = 0.0  
-        num_batches = 0 
-        total_data_bits = 0 
-        dataloader = DataLoader(self.data, batch_size = self.batch_size, drop_last = False)
-       
+        total_time = 0.0
+        num_batches = 0
+        total_data_bits = 0
+
+        dataloader = DataLoader(self.data, batch_size=self.batch_size, drop_last=False)
+
+        if self.data is None:
+            raise Exception("load the data first")
+
+        if self.model is None:
+            raise Exception("load the model first")
+        
+        self.real_redshift = self.data[:][2].to("cpu")
+
         # Initialize the profiler to track both CPU and GPU activities and memory usage
         with profile(
             activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
             profile_memory=True,
-            record_shapes=True) as prof:
+            record_shapes=True,
+        ) as prof:
 
             for _, data in enumerate(dataloader):
                 with torch.no_grad():
@@ -59,7 +94,9 @@ class CosmicAI:
                     magnitude = data[1].to(self.device)  # Magnitude to device
 
                     with record_function("model_inference"):
-                        predict_redshift = self.model([image, magnitude])  # Model inference
+                        predict_redshift = self.model(
+                            [image, magnitude]
+                        )  # Model inference
 
                     # Append the redshift prediction to analysis list
                     redshift_analysis.append(predict_redshift.view(-1, 1))
@@ -72,14 +109,12 @@ class CosmicAI:
                     magnitude_bits = (
                         magnitude.element_size() * magnitude.nelement() * 8
                     )  # bytes -> bits
-                    total_data_bits += (
-                        image_bits + magnitude_bits
-                    ) 
+                    total_data_bits += image_bits + magnitude_bits
 
         num_samples = len(self.real_redshift)
         redshift_analysis = torch.cat(redshift_analysis, dim=0)
         redshift_analysis = (
-            redshift_analysis.cpu() # TODO: what if its gpu?
+            redshift_analysis.cpu()  # TODO: what if its gpu?
             .detach()
             .numpy()
             .reshape(
@@ -91,27 +126,29 @@ class CosmicAI:
         total_cpu_memory = (
             prof.key_averages().total_average().cpu_memory_usage / 1e6
         )  # bytes -> MB
-        total_gpu_memory = (
-            prof.key_averages().total_average().cuda_memory_usage / 1e6
-        )  # bytes -> MB
+        # total_gpu_memory = (
+        #     prof.key_averages().total_average().cuda_memory_usage / 1e6
+        # )  # bytes -> MB
 
         # Extract total CPU and GPU time
         total_cpu_time = (
             prof.key_averages().total_average().cpu_time_total / 1e6
         )  # Convert from microseconds to seconds
-        total_gpu_time = (
-            prof.key_averages().total_average().cuda_time_total / 1e6
-        )  # Convert from microseconds to seconds
+        # total_gpu_time = (
+        #     prof.key_averages().total_average().cuda_time_total / 1e6
+        # )  # Convert from microseconds to seconds
 
-        total_time = max(total_cpu_time, total_gpu_time)
+        # total_time = max(total_cpu_time, total_gpu_time)
+        total_time = max(total_cpu_time, 0)
+
 
         avg_time_batch = total_time / num_batches
 
         execution_info = {
             "total_cpu_time": total_cpu_time,
-            "total_gpu_time": total_gpu_time,
+            # "total_gpu_time": total_gpu_time,
             "total_cpu_memory": total_cpu_memory,
-            "total_gpu_memory": total_gpu_memory,
+            # "total_gpu_memory": total_gpu_memory,
             "execution_time_per_batch": avg_time_batch,  # Average execution time per batch
             "num_batches": num_batches,  # Number of batches
             "batch_size": self.batch_size,  # Batch size
@@ -119,13 +156,11 @@ class CosmicAI:
             "throughput_bps": total_data_bits
             / total_time,  # Throughput in bits per second (using total_time for all batches)
         }
-        
+
         # TODO add in the plots as well
         # if save_plot:
-            # Invoke the evaluation metrics
-            # plt_rdshft.err_calculate(redshift_analysis, self.real_redshift, execution_info, self.save_path)
-            # plt_rdshft.plot_density(redshift_analysis, self.real_redshift, self.save_path)
+        # Invoke the evaluation metrics
+        # plt_rdshft.err_calculate(redshift_analysis, self.real_redshift, execution_info, self.save_path)
+        # plt_rdshft.plot_density(redshift_analysis, self.real_redshift, self.save_path)
 
         return execution_info
-
-
