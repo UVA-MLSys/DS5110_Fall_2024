@@ -29,6 +29,14 @@ install_package:
 generate_file_structure:
 	tree -L 1
 
+## runs Google Style Guide Linter
+lint:
+	pylint /src
+
+## runs black to auto format code
+format:
+	black /src
+
 
 .DEFAULT_GOAL := help
 
