@@ -167,5 +167,8 @@ keys/
 #scratch files
 scratch/
 
+#models directory
+models/
+
 # test cache
 .pytest_cache
