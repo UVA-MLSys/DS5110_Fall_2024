@@ -16,6 +16,7 @@ pylint
 pyyaml
 pydot-env
 scipy
+seaborn
 sympy==1.13.1
 timm==0.4.12
 tqdm
