@@ -6,7 +6,7 @@
 The goal of the project is redshift prediction using SDSS Data and AI-for-Astronomy Pipeline with data from Sloan Digital Sky Survey (SDSS).
 
 ## The Data: 
-The data set for the project will be an astronomy related data set. The dataset will be provided by the professor. This is the basic data set chosen. The data can be located at the follow Github repository: https://github.com/mstaylor/AI-for-Astronomy.git. The dataset consists of images collected from either satellites or telescopes. Most images can be categorized as galaxies, stars, or quasars.  
+The data set for the project will be an astronomy related data set. The dataset will be provided by the professor. This is the basic data set chosen. The data can be located at the follow Github repository: https://github.com/mstaylor/AI-for-Astronomy.git. The dataset consists of images collected from either satellites or telescopes. Most images can be categorized as galaxies, stars, or quasars. On AWS, the link to the bucket with the data and the scripts is, https://us-east-1.console.aws.amazon.com/s3/buckets/team2cosmicai?region=us-east-1&bucketType=general&tab=objects
 
 ## Experimental Design: 
 We set up Step Functions within a state machine. These input payloads and generate AWS Lambda fmi_executor payloads. Our first state machine trials were with the pre-existing MyStateMachine-e5ydt2afc state machine.
