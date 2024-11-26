@@ -18,9 +18,15 @@ pydot-env
 scipy
 sympy==1.13.1
 timm==0.4.12
+tqdm
 torch==2.5.1
 torchvision==0.20.1
 typing_extensions==4.12.2
 
 #  need to add in boto3 awscli maybe
 # tensorflow pydot-env pylint
+
+# include in req
+# !pip install pandas as pd
+# !pip install python-dotenv
+# !pip install pyyaml
