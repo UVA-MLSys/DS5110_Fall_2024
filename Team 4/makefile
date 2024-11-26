@@ -37,6 +37,10 @@ lint:
 format:
 	black /src
 
+## clean up the repo
+clean:
+	echo "add what files to clean up"
+
 
 .DEFAULT_GOAL := help
 

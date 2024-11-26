@@ -1,25 +1,41 @@
 from typing import Self
 
-from dotenv import dotenv_values
+# from dotenv import dotenv_values
+
 import torch
 from torch.profiler import profile, record_function, ProfilerActivity
 from torch.utils.data import DataLoader
 
-import Plot_Redshift as plt_rdshft
 
-config: dict = dotenv_values(".env")
 
-class AstronomyAI:
+
+# import Plot_Redshift as plt_rdshft
+import cosmicai.Plot_Redshift as plt_rdshift
+
+# config: dict = dotenv_values(".env")
+
+# batch sizes
+# batch sizes to try: small 8, 16, 32, 64
+# batch sizes to try: medium 128, 256
+# batch sizes to try: small
+
+
+
+class CosmicAI:
     def __init__(self, batch_size=512, device="cpu") -> Self:
         self.batch_size = batch_size
-        self.data = torch.load(config["data"])  # can change when testing new data 'resized_inference.pt'
+        # self.data = torch.load("../data/raw/Inference.pt")  # can change when testing new data 'resized_inference.pt'
         self.device = device
-        self.model_path = torch.load(config["model_path"]).model.module.eval()  # 'Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt'
+        # self.model_path = torch.load("../data/models/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt").model.module.eval()  # 'Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt'
         self.save_path = "Plots/"
-        self.real_redshift = self.data[:][2].to("cpu")
+        #self.real_redshift = self.data[:][2].to("cpu")
 
         if self.device not in ["cpu", "gpu"]:
             raise "device can only be cpu or gpu"
+        
+        # TODO: load dot_env files in as default
+        # TODO: set data to just be path and actually call functions to load it
+        # TODO: If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
 
     def set_data(self, new_data_path:str) -> Self:
         self.data = torch.load(new_data_path)
@@ -31,7 +47,6 @@ class AstronomyAI:
         total_data_bits = 0 
         dataloader = DataLoader(self.data, batch_size = self.batch_size, drop_last = False)
        
-
         # Initialize the profiler to track both CPU and GPU activities and memory usage
         with profile(
             activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
@@ -105,10 +120,11 @@ class AstronomyAI:
             / total_time,  # Throughput in bits per second (using total_time for all batches)
         }
         
-        if save_plot:
+        # TODO add in the plots as well
+        # if save_plot:
             # Invoke the evaluation metrics
-            plt_rdshft.err_calculate(redshift_analysis, self.real_redshift, execution_info, self.save_path)
-            plt_rdshft.plot_density(redshift_analysis, self.real_redshift, self.save_path)
+            # plt_rdshft.err_calculate(redshift_analysis, self.real_redshift, execution_info, self.save_path)
+            # plt_rdshft.plot_density(redshift_analysis, self.real_redshift, self.save_path)
 
         return execution_info
 
