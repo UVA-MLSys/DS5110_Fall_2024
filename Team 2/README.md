@@ -15,7 +15,7 @@ This was the original trials just to get familiar with step function and state m
 
 
 ## Beyond the original specifications:
-We used both the CPU and GPU for our duration measurements for CosmicAI.
+We used both the CPU and GPU for our duration measurements for CosmicAI. Created a file called inference-cuda.py that uses GPU.
 
 ## Results:
 
