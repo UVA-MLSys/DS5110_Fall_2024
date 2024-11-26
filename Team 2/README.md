@@ -1,22 +1,28 @@
-BigDataSystems-Fall 2024: Team 2
+# BigDataSystems-Fall 2024: Team 2
 
-Members: Isidro Pride, Abhinandan Mekap, John Le
+## Members: Isidro Pride, Abhinandan Mekap, John Le
 
-Introduction:
+## Introduction:
+The goal of the project is redshift prediction using SDSS Data and AI-for-Astronomy Pipeline with data from Sloan Digital Sky Survey (SDSS).
 
-The Data: 
+## The Data: 
 The data set for the project will be an astronomy related data set. The dataset will be provided by the professor. This is the basic data set chosen. The data can be located at the follow Github repository: https://github.com/mstaylor/AI-for-Astronomy.git. The dataset consists of images collected from either satellites or telescopes. Most images can be categorized as galaxies, stars, or quasars.  
 
-Experimental Design: 
-We set up a Step Function within a state machine. This will take input payloads and generate AWS Lambda fmi_executor payloads. 
-We created three State Machine trials/executions​. We used the pre-existing MyStateMachine-e5ydt2afc state machine. We updated 'world_size' parameter within the 'Lamda Init' function for our trials, specifically using 2, 8, and 32​
+## Experimental Design: 
+We set up Step Functions within a state machine. These input payloads and generate AWS Lambda fmi_executor payloads. Our first state machine trials were with the pre-existing MyStateMachine-e5ydt2afc state machine.
+We created three State Machine trials/executions​ and updated 'world_size' parameter within the 'Lamda Init' function for our trials, specifically using 2, 8, and 32​.
 
-Beyond the original specifications:
-We used results from the step function execution, but also cloudwatch results.
+This was the original trials just to get familiar with step function and state machines. We later performed this on the actual astronomy data. We cloned the cosmicai state function and executed the state machines on the astronomy data. We did three initial trials with different world sizes and measured changes in duration and other metrics.
 
-Results: 
-# Lambda Functions  |  Duration
--------------------------------
+
+## Beyond the original specifications:
+We used both the CPU and GPU for our duration measurements for CosmicAI. Created a file called inference-cuda.py that uses GPU.
+
+## Results:
+
+### Basic DS5110 State Machine
+Lambda Functions    |  Duration
+--------------------|------------
 2                   |  4.926
 8                   |  6.573
 32                  |  6.615
@@ -30,3 +36,29 @@ We didn't do any additional testing. Our team simply obtaining results of the du
 Conclusions: 
 
 We definitely noticed a correlation between Lambda Function and Duration. However, understanding how the metrics for cloudwatch calculations would be helpful. We also obtained some costs from the billing and colst management tool on AWS. However, finding a way to measure the costs of individual executions would be helpful if possible.
+
+### Cosmic AI Results
+#### Duration
+World Size       |  Duration (cpu)  |  Duration (gpu)
+-----------------|------------------|-----------------
+1                |  10.695          |  5.749
+10               |  14.895          |  5.762
+100              |  Error           |  44.717
+
+We cloned the cosmic ai state machine and ran executions with world sizes of 1, 10, and 100, for both cpu and gpu. We had to update inference.py to use cuda instead of cpu for the device. Duration increased as we increased the world size for both cpu and gpu. CPU seemed to have issues running larger world sizes, as a world size of 100 threw an error. However, GPU ran perfectly fine. The duration difference between a world size of 10 and a world size of 100 was quite drastic.
+
+#### Metrics for world size 1 and world size 10 with cpu
+##### World Size 1
+![image](https://github.com/user-attachments/assets/016dfbc4-0486-4d9c-bcc9-ae8a86fd1f1f)
+##### World Size 10
+![Screenshot 2024-11-24 140939](https://github.com/user-attachments/assets/c22e8bf0-31c8-4f92-89b4-dafc40f2854a)
+
+Testing: 
+
+Testing inolved simply gathering the Cosmic AI results above and comparing the durations between the cpu and gpu.
+
+Conclusions:
+
+CPU time and Execution time per batch increases with hieger world size. Total lambda cost increases with world size. Steop function cost remains constant as state transitions is constant.
+
+
