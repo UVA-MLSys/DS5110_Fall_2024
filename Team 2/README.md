@@ -12,7 +12,7 @@ The data set for the project will be an astronomy related data set. The dataset 
 We set up Step Functions within a state machine. These input payloads and generate AWS Lambda fmi_executor payloads. Our first state machine trials were with the pre-existing MyStateMachine-e5ydt2afc state machine.
 We created three State Machine trials/executions​ and updated 'world_size' parameter within the 'Lamda Init' function for our trials, specifically using 2, 8, and 32​.
 
-This was the original trials just to get familiar with step function and state machines. We later performed this on the actual astronomy data. We cloned the cosmicai state function and executed the state machines on the astronomy data. We did three initial trials with different world sizes of 1, 10, and 1000 and measured changes in duration and other metrics.
+This was the original trials just to get familiar with step function and state machines. We later performed this on the actual astronomy data. We cloned the cosmicai state function and executed the state machines on the astronomy data. We did three initial trials with different world sizes of 1, 10, and 100 and measured changes in duration and other metrics.
 
 
 ## Beyond the original specifications:
