@@ -157,10 +157,9 @@ class CosmicAI:
             / total_time,  # Throughput in bits per second (using total_time for all batches)
         }
 
-        # TODO add in the plots as well
-        # if save_plot:
+        if save_plot:
         # Invoke the evaluation metrics
-        # plt_rdshft.err_calculate(redshift_analysis, self.real_redshift, execution_info, self.save_path)
-        # plt_rdshft.plot_density(redshift_analysis, self.real_redshift, self.save_path)
+            plt_rdshft.err_calculate(redshift_analysis, self.real_redshift, execution_info, self.save_path)
+            plt_rdshft.plot_density(redshift_analysis, self.real_redshift, self.save_path)
 
         return execution_info
