@@ -53,3 +53,15 @@ The team went through the AWS set up of the Step Function. Once set up was compl
 ## Conclusions: 
 
 Overall, the cost of running a Lambda function on AWS is very small, but it's not nothing. It will be interesting to see how costs and time change with the addition of data. 
+
+
+## How to set the project environment and replicate the results
+
+The initial Lambda function with no data was run according to the Step Function Tutorial (Semester Project) listed in the Pre-Class Assignment on Canvas. 
+
+For the additions with data, references such as the [FMI wiki Overview](https://github.com/mstaylor/fmi/wiki/Aws) were used. The State Machine was copied and named as Group3_CosmicAI. All world size and GPU vs CPU tests were run here. When running, the "Concurrency limit" in the "Distributed Test" block was set to 20 for world sizes larger than or equal to 32.    
+
+Data was stored in a an S3 bucket called team3cosmicai. Data files and the inference.py files were stored here. Changes to this file include using 'cuda' as the default so GPU will be used.  
+
+
+
