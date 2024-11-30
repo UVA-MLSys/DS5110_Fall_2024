@@ -29,11 +29,11 @@ Lambda Functions    |  Duration
 
 Duration/Runtime seemed to increase as the number of lambda functions increased.
 
-Testing: 
+#### Testing: 
 
 We didn't do any additional testing. Our team simply obtaining results of the duration. In addition, we did look at cloudwatch duration and max memory used. 
 
-Conclusions: 
+#### Conclusions: 
 
 We definitely noticed a correlation between Lambda Function and Duration. However, understanding how the metrics for cloudwatch calculations would be helpful. We also obtained some costs from the billing and colst management tool on AWS. However, finding a way to measure the costs of individual executions would be helpful if possible.
 
@@ -53,11 +53,11 @@ We cloned the cosmic ai state machine and ran executions with world sizes of 1, 
 ##### World Size 10
 ![Screenshot 2024-11-24 140939](https://github.com/user-attachments/assets/c22e8bf0-31c8-4f92-89b4-dafc40f2854a)
 
-Testing: 
+#### Testing: 
 
 Testing inolved simply gathering the Cosmic AI results above and comparing the durations between the cpu and gpu.
 
-Conclusions:
+#### Conclusions:
 
 CPU time and Execution time per batch increases with hieger world size. Total lambda cost increases with world size. Steop function cost remains constant as state transitions is constant.
 
