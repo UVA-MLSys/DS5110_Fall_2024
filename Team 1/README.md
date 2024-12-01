@@ -20,15 +20,22 @@
 - [Problem Statement](#problem-statement)
 - [Data Details](#data-details)
 - [Experiment Process](#experiment-process)
+  - [Data Pre-Processing](#data-pre-processing)
+  - [Model Training](#model-training)
+  - [Evaluation Metrics](#evaluation-metrics)
 - [Beyond the Original Specifications](#beyond-the-original-specifications)
 - [Results](#results)
 - [How to Set the Project Environment and Replicate Results](#how-to-set-the-project-environment-and-replicate-results)
   - [1. Using AWS SageMaker](#1-using-aws-sagemaker)
   - [2. Setting Up AWS S3](#2-setting-up-aws-s3)
-  - [3. Configuring IAM Roles and Policies](#3-configuring-iam-roles-and-policies)
+  - [3. Download the Project Files](#3-download-the-project-files)
   - [4. Setting Up AWS Lambda Functions](#4-setting-up-aws-lambda-functions)
   - [5. Creating and Running AWS Step Functions](#5-creating-and-running-aws-step-functions)
-  - [6. Monitoring with AWS CloudWatch](#6-monitoring-with-aws-cloudwatch)
+    - [Overview of the Input Payload](#overview-of-the-input-payload)
+    - [File Organization for Step Functions](#file-organization-for-step-functions)
+    - [Setting Up the Step Function](#setting-up-the-step-function)
+    - [Executing the State Machine](#executing-the-state-machine)
+    - [Viewing Execution Logs](#viewing-execution-logs)
 - [Conclusion](#conclusion)
 
 ---
@@ -141,7 +148,7 @@ To facilitate serverless inference for the Astronomy AI model, this project uses
 #### Overview of the Input Payload
 The state machine accepts an input payload in the following format:
 
-\```json
+```json
 {
   "bucket": "cosmicai-data",
   "world_size": "2",
@@ -150,7 +157,6 @@ The state machine accepts an input payload in the following format:
   "data_path": "/tmp/scripts/Anomaly Detection/Inference/resized_inference.pt",
   "script": "/tmp/scripts/Anomaly Detection/Inference/inference.py"
 }
-\```
 
 **Description of Payload Parameters:**
 - `bucket`: Name of the S3 bucket containing the required Python scripts.
@@ -163,7 +169,7 @@ The state machine accepts an input payload in the following format:
 #### File Organization for Step Functions
 The folder structure for Step Functions and related files is as follows:
 
-\```
+```
 aws/
 ├── lambda/
 │   ├── initializer_FMI.py
@@ -179,7 +185,7 @@ aws/
 ├── demo input.json
 ├── plot_config.py
 ├── plots.ipynb
-\```
+```
 
 **Lambda Folder Files:**
 - `initializer_FMI.py` and `initializer.py`: Initialize the data distribution and tasks for Lambda functions.
@@ -192,7 +198,7 @@ aws/
 3. Upload and configure the Lambda functions (from the `lambda` folder) to the state machine.
 4. Edit the input payload for the state machine as follows:
 
-\```json
+```json
 {
   "bucket": "<your-s3-bucket-name>",
   "world_size": "2",
@@ -201,7 +207,8 @@ aws/
   "data_path": "/tmp/scripts/Anomaly Detection/Inference/resized_inference.pt",
   "script": "/tmp/scripts/Anomaly Detection/Inference/inference.py"
 }
-\```
+```
+
 5. Update the payload fields to match your S3 bucket and file paths.
 6. Save the state machine configuration and ensure all necessary resources (Lambda, S3) are properly linked.
 
