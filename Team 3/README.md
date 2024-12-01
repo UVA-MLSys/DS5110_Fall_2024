@@ -63,5 +63,8 @@ For the additions with data, references such as the [FMI wiki Overview](https://
 
 Data was stored in a an S3 bucket called team3cosmicai. Data files and the inference.py files were stored here. Changes to this file include using 'cuda' as the default so GPU will be used.  
 
+## Cosmic AI Results
+
+
 
 
