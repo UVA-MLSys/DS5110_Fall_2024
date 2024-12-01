@@ -157,6 +157,7 @@ The state machine accepts an input payload in the following format:
   "data_path": "/tmp/scripts/Anomaly Detection/Inference/resized_inference.pt",
   "script": "/tmp/scripts/Anomaly Detection/Inference/inference.py"
 }
+```
 
 **Description of Payload Parameters:**
 - `bucket`: Name of the S3 bucket containing the required Python scripts.
