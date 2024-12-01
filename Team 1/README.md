@@ -72,6 +72,7 @@ The model that is used for redshift prediction is pre-trained as "a vision trans
 The SDSS dataset includes images with "corresponding magnitude values for the five photometric bands (u, g, r, i, z) and redshift targets." Each image is meticulously processed to ensure compatibility with the model's requirements, including cropping from 64 × 64 pixels to 32 × 32 pixels for input optimization. The magnitude values represent measurements of brightness across different wavelengths, which, combined with the image data, provide a rich and multi-dimensional view of celestial objects. This combination of image and numerical data ensures a comprehensive approach to redshift prediction, enhancing the model's ability to generalize across diverse astronomical objects.
 
 The use of a vision transformer model is particularly significant for this task, as it excels in capturing spatial and contextual relationships in image data, making it well-suited for the analysis of celestial phenomena. By integrating both visual and numerical modalities, this methodology represents a cutting-edge approach in astrophysics, showcasing the potential of machine learning in advancing our understanding of the universe.
+
 ---
 
 ## Experiment Process
