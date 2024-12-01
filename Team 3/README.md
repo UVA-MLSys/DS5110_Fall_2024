@@ -68,4 +68,23 @@ Data was stored in a an S3 bucket called team3cosmicai. Data files and the infer
 ![Result Summary](result_summary.jpg)
 
 
+Summary:
+
+1. **Total CPU Time (s)**: The total time taken by the CPU to complete the operation is approximately 6.124 seconds. This metric indicates the overall CPU usage duration for the task.
+
+2. **Total CPU Memory (MB)**: The total memory utilized by the CPU is 14320.256 MB (approximately 14 GB). This is a significant amount of memory, which suggests that the operation is memory-intensive.
+
+3. **Execution Time per Batch (s)**: Each batch takes around 3.062 seconds to execute. With 2 batches in total, this gives an idea of how long each segment of the workload takes to process.
+
+4. **Number of Batches**: The workload is divided into 2 batches, indicating that the processing was split into smaller chunks for efficiency or memory management.
+
+5. **Batch Size**: Each batch contains 512 units, which could refer to the number of data samples or processing elements in each batch.
+
+6. **Throughput (Bps)**: The throughput is approximately 27,473,330 bytes per second, which measures the amount of data processed per second.
+
+7. **Samples per Second**: The system processed around 167.198 samples per second, indicating the speed at which individual data samples were handled.
+
+8. **RAM Info (GB)**: The available system RAM is approximately 10.456 GB. This provides context about the total memory capacity of the system.
+
+9. **Self CPU Memory (MB)**: The memory specifically used by the CPU for this operation is 10.510 MB, which is a relatively small portion compared to the total memory used.
 
