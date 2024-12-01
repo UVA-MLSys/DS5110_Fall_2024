@@ -65,6 +65,7 @@ Data was stored in a an S3 bucket called team3cosmicai. Data files and the infer
 
 ## Cosmic AI Results
 
+![Profiling Summary](profiling_summary.png)
 
 
 
