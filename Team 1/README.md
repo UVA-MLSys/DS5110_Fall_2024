@@ -42,7 +42,7 @@
     - [Executing the State Machine](#executing-the-state-machine)
     - [Viewing Execution Logs](#viewing-execution-logs)
 - [Conclusion](#conclusion)
-  - [Step Fucntion Conclusion](#step-fucntion-conclusion)
+  - [Step Fucntion Conclusion](#step-function-conclusion)
   - [Cosmic-AI Conclusion](#cosmic-ai-conclusion)
 
 ---
