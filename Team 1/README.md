@@ -138,22 +138,22 @@ Experimenting with different `world_size` values in *AWS Step Functions with Lam
 | 1024       | 1             | 7.41                     | 14330.32              | 7.46                  | 137.25                |
 
 #### Graph: Avg. Execution Time by Total Load Size
-![Avg Execution Time](Results_Batch_Exe.jpg)
+![Avg Execution Time](Results_Batch_Exe.png)
 
 #### Graph: Avg. Sample per Second by Total Load Size
-![Avg Sample Per Second](Results_Sample_Exe.jpg)
+![Avg Sample Per Second](Results_Sample_Exe.png)
 
 #### JSON Data Sources for Inference Results
 The following JSON files provide the raw data used to calculate the results in the table above:
 
 - **Cosmic JSON for Batch Size 256**  
-  ![Cosmic JSON Batch 256](Cosmic_JSON_256.jpg)
+  ![Cosmic JSON Batch 256](Cosmic_JSON_256.png)
 
 - **Cosmic JSON for Batch Size 512**  
-  ![Cosmic JSON Batch 512](Cosmic_JSON_512.jpg)
+  ![Cosmic JSON Batch 512](Cosmic_JSON_512.png)
 
 - **Cosmic JSON for Batch Size 1024**  
-  ![Cosmic JSON Batch 1024](Cosmic_JSON_1024.jpg)
+  ![Cosmic JSON Batch 1024](Cosmic_JSON_1024.png)
 
 
 - **Batch Size 256**:  
@@ -176,10 +176,10 @@ The following JSON files provide the raw data used to calculate the results in t
 | 1024       | 12.96               | 13.97                 | 3350                 | 1.006               |
 
 #### Graph: Duration and Billed Duration by Batch Size
-![Duration and Billed Duration](Results_Billed.jpg)
+![Duration and Billed Duration](Results_Billed.png)
 
 #### Graph: Max Memory Used by Batch Size
-![Max Memory Used](Results_Memory.jpg)
+![Max Memory Used](Results_Memory.png)
 
 - **Batch Size 256**:  
   Although batch size 256 has the highest full duration (**11.88 seconds**) and billed duration (**12.58 seconds**), it uses the least max memory (**1960 MB**) compared to the other batch sizes. This makes it memory-efficient but potentially costlier due to longer durations.
