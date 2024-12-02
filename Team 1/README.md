@@ -147,13 +147,13 @@ Experimenting with different `world_size` values in *AWS Step Functions with Lam
 The following JSON files provide the raw data used to calculate the results in the table above:
 
 - **Cosmic JSON for Batch Size 256**  
-  ![Cosmic-JSON-Batch-256](Pics/Cosmic_JSON_256.png)
+  ![Cosmic-JSON-Batch-256](Pics/Cosmic_JSON_256.jpg)
 
 - **Cosmic JSON for Batch Size 512**  
-  ![Cosmic JSON Batch 512](Pics/Cosmic_JSON_512.png)
+  ![Cosmic JSON Batch 512](Pics/Cosmic_JSON_512.jpg)
 
 - **Cosmic JSON for Batch Size 1024**  
-  ![Cosmic JSON Batch 1024](Pics/Cosmic_JSON_1024.png)
+  ![Cosmic JSON Batch 1024](Pics/Cosmic_JSON_1024.jpg)
 
 
 - **Batch Size 256**:  
