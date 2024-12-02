@@ -25,6 +25,9 @@
   - [Evaluation Metrics](#evaluation-metrics)
 - [Beyond the Original Specifications](#beyond-the-original-specifications)
 - [Results](#results)
+  - [Step Function](#Step-Function)
+  - [Cosmic AI](#Cosmic-AI)
+  - [Insights and Use Case Recommendations](#insights-and-use-case-recommendations)
 - [How to Set the Project Environment and Replicate Results](#how-to-set-the-project-environment-and-replicate-results)
   - [1. Using AWS SageMaker](#1-using-aws-sagemaker)
   - [2. Setting Up AWS S3](#2-setting-up-aws-s3)
@@ -37,6 +40,8 @@
     - [Executing the State Machine](#executing-the-state-machine)
     - [Viewing Execution Logs](#viewing-execution-logs)
 - [Conclusion](#conclusion)
+  -[Step Fucntion Conclusion](#step-fucntion-conclusion)
+  -[Cosmic-AI Conclusion](#cosmic-ai-conclusion)
 
 ---
 
@@ -90,6 +95,11 @@ The descriptions of the primary metrics used during the evaluation of the predic
 - **Bias**: Measures the average residuals between predicted and true values, indicating any systematic over- or underestimation in predictions.
 - **Precision**: Represents the expected scatter of errors, reflecting the consistency of the model's predictions.
 - **R² Score**: Evaluates how well the model predicts compared to the mean of true values; a value closer to 1 indicates better predictive performance.
+- **Execution Time (seconds/batch)**: Measured the time taken to process a batch of data. Batch size 256 was the fastest (**1.22 seconds**), while batch size 1024 was the slowest (**7.46 seconds**).
+- **Billed Duration (seconds)**: Reflected the total time billed for processing a batch. Batch size 512 had the lowest billed duration (**11.67 seconds**), demonstrating its cost efficiency compared to batch sizes 256 (**12.58 seconds**) and 1024 (**13.97 seconds**).
+- **Max Memory Used (MB)**: Indicated peak memory usage during processing. Batch size 512 required significantly less memory (**645 MB**) compared to 256 (**1960 MB**) and 1024 (**3350 MB**), showing superior resource utilization.
+- **Sample Throughput (samples/second)**: Captured the number of samples processed per second. Batch size 256 achieved the highest throughput (**209.85 samples/second**), with batch sizes 512 (**176.36 samples/second**) and 1024 (**137.25 samples/second**) trailing behind.
+- **Total CPU Time (seconds)**: Quantified the overall CPU time consumed during batch processing. Batch size 256 used the least CPU time (**4.88 seconds**), while 1024 consumed the most (**7.41 seconds**).
 
 ---
 
@@ -103,6 +113,8 @@ Testing alternative `world_size` parameters helps determine the best configurati
 
 ## Results
 
+### Step Function
+
 | World Size | Lambda Init Duration (sec) | MapState Duration (sec) | Step Function Duration (sec) |
 |------------|----------------------------|-------------------------|------------------------------|
 | 2          | 0.373                      | 2.609                   | 3.161                        |
@@ -114,6 +126,119 @@ Experimenting with different `world_size` values in *AWS Step Functions with Lam
 ![Results](Pics/inference-results.png "Results")
 
 ![Setup](Pics/inference-setup.png "Setup")
+
+### Cosmic AI
+
+**Inference Results**
+
+| Batch Size | Total Batches | Total CPU Run Time (sec) | Total CPU Memory (Mb) | Execution Time (sec) | Sample Size per Second |
+|------------|---------------|--------------------------|-----------------------|-----------------------|-----------------------|
+| 256        | 4             | 4.88                     | 14315.89              | 1.22                  | 209.85                |
+| 512        | 2             | 5.81                     | 14320.20              | 2.90                  | 176.36                |
+| 1024       | 1             | 7.41                     | 14330.32              | 7.46                  | 137.25                |
+
+#### Graph: Avg. Execution Time by Total Load Size
+![Avg Execution Time](Results_Batch_Exe.jpg)
+
+#### Graph: Avg. Sample per Second by Total Load Size
+![Avg Sample Per Second](Results_Sample_Exe.jpg)
+
+#### JSON Data Sources for Inference Results
+The following JSON files provide the raw data used to calculate the results in the table above:
+
+- **Cosmic JSON for Batch Size 256**  
+  ![Cosmic JSON Batch 256](Cosmic_JSON_256.jpg)
+
+- **Cosmic JSON for Batch Size 512**  
+  ![Cosmic JSON Batch 512](Cosmic_JSON_512.jpg)
+
+- **Cosmic JSON for Batch Size 1024**  
+  ![Cosmic JSON Batch 1024](Cosmic_JSON_1024.jpg)
+
+
+- **Batch Size 256**:  
+  Batch size 256 offers the fastest execution time per batch (**1.22 seconds**) and the highest sample size per second (**209.85**). It is highly efficient for time-sensitive tasks. However, its total CPU memory usage (**14,315.89 MB**) is similar to larger batch sizes, which could lead to higher costs.
+
+- **Batch Size 512**:  
+  This batch size provides a good balance between speed and resource utilization. Its execution time (**2.90 seconds**) and sample size per second (**176.36**) are reasonable. Additionally, its total CPU memory usage (**14,320.20 MB**) is nearly the same as batch size 256, indicating diminishing returns in memory efficiency.
+
+- **Batch Size 1024**:  
+  While batch size 1024 processes the samples in a single batch, it suffers from the slowest execution time per batch (**7.46 seconds**) and the lowest sample size per second (**137.25**). Its higher total memory usage (**14,330.32 MB**) makes it less suitable for both time-sensitive and cost-efficient applications.
+
+---
+
+**Cloud Watch**
+
+| Batch Size | Full Duration (sec) | Billed Duration (sec) | Max Memory Used (MB) | Init Duration (sec) |
+|------------|---------------------|-----------------------|----------------------|---------------------|
+| 256        | 11.88               | 12.58                 | 1960                 | 0.699               |
+| 512        | 10.79               | 11.67                 | 645                  | 0.878               |
+| 1024       | 12.96               | 13.97                 | 3350                 | 1.006               |
+
+#### Graph: Duration and Billed Duration by Batch Size
+![Duration and Billed Duration](Results_Billed.jpg)
+
+#### Graph: Max Memory Used by Batch Size
+![Max Memory Used](Results_Memory.jpg)
+
+- **Batch Size 256**:  
+  Although batch size 256 has the highest full duration (**11.88 seconds**) and billed duration (**12.58 seconds**), it uses the least max memory (**1960 MB**) compared to the other batch sizes. This makes it memory-efficient but potentially costlier due to longer durations.
+
+- **Batch Size 512**:  
+  Batch size 512 demonstrates the best overall balance. Its billed duration (**11.67 seconds**) is close to batch size 256, but its max memory usage (**645 MB**) is substantially lower, making it the most cost-efficient option.
+
+- **Batch Size 1024**:  
+  Batch size 1024 is the least efficient of the three. It uses the most max memory (**3350 MB**) and has the highest billed duration (**13.97 seconds**). While it can handle large batches, it is costly and slow, making it unsuitable for most use cases.
+
+---
+
+### **Insights and Use Case Recommendations**
+
+#### **1. Strength and Weaknesses:**
+
+ **Batch Size 256**
+- ***Strengths***: Achieves the fastest execution time per batch (**1.22 seconds**) and the highest sample size processed per second (**209.85**). These metrics make it ideal for time-sensitive applications where rapid processing is crucial.
+- ***Weaknesses***: Despite its speed, it has the highest billed duration (**12.58 seconds**) and memory usage (**14,315.89 MB**) similar to larger batch sizes, which could inflate costs over time.
+
+ **Batch Size 512**
+- ***Strengths***: Strikes the best balance between cost and performance. It demonstrates a reasonable execution time (**2.90 seconds**) and the second-highest sample size processed per second (**176.36**) while utilizing significantly less memory (**14,320.20 MB** in total CPU memory, **645 MB** max memory). Its billed duration (**11.67 seconds**) is close to that of batch size 256, offering cost efficiency.
+- ***Weaknesses***: While it balances speed and memory usage effectively, it is slower than batch size 256, making it less ideal for applications requiring the fastest possible processing.
+
+ **Batch Size 1024**
+- ***Strengths***: Processes the largest number of samples in a single batch, which could be beneficial for workloads involving extremely large datasets or batch-dependent operations.
+- ***Weaknesses***: Suffers from the slowest execution time per batch (**7.46 seconds**) and the lowest sample size processed per second (**137.25**). It also incurs the highest memory usage (**14,330.32 MB total CPU memory, 3,350 MB max memory**) and the longest billed duration (**13.97 seconds**), making it the least efficient and most costly of the three.
+
+#### **2. Best Batch Size for Cost-Effectiveness**
+Batch size **512** strikes the ideal balance between speed, memory usage, and cost. With the lowest max memory usage (**645 MB**) and reasonable execution time (**2.90 seconds**), it minimizes costs associated with both memory usage and billed duration.
+
+#### **3. Best Batch Size for Speed**
+Batch size **256** is the fastest, achieving an execution time of **1.22 seconds** and the highest sample size per second (**209.85**). It is ideal for applications where speed is a top priority, though memory costs are slightly higher.
+
+#### **4. Worst Batch Size**
+Batch size **1024** performs poorly in almost every category. Its slow execution time (**7.46 seconds**), high memory usage (**3350 MB**), and extended billed duration (**13.97 seconds**) make it unsuitable for most practical applications.
+
+#### **5. Trade-Offs**
+- Batch size **256** is optimal for speed but incurs higher billed durations and similar memory usage to batch size 512.  
+- Batch size **512** achieves the best balance overall, reducing memory usage significantly without a substantial increase in billed duration or execution time.
+
+---
+### **Correlations Between Inference and Cloud Watch Data**
+- **Memory Usage**: Total CPU memory in inference results remains nearly constant across batch sizes, while max memory usage in Cloud Watch data varies significantly. Batch size **512** stands out with the lowest memory requirement.
+- **Execution Time and Billed Duration**: Longer execution times directly correlate with higher billed durations, as seen in batch size **1024**, which has the highest values for both metrics.
+
+---
+
+### **Recommendations for Use Case**
+- For **quick processing tasks**, batch size **256** is recommended to prioritize speed.
+- For **cost-sensitive tasks**, batch size **512** is the most efficient due to its balance of speed, memory usage, and billed duration.
+- Avoid batch size **1024** unless processing very large datasets where higher memory and execution times are acceptable trade-offs.
+---
+
+### **Key Takeaways**
+- **Best Overall Choice**: Batch size **512** achieves the best balance, offering a reasonable trade-off between speed and memory usage while keeping costs manageable. It is recommended for most workloads where a combination of speed and cost-efficiency is critical.
+- **Best for Speed**: Batch size **256** excels in speed and throughput, making it the preferred choice for real-time or low-latency applications. However, its higher memory usage and longer billed duration may increase operational costs.
+- **Worst Choice**: Batch size **1024** underperforms across almost all metrics, with slower execution times, lower throughput, and significantly higher memory usage. It is best avoided unless the workload specifically benefits from processing large batches.
+
 ---
 
 ## How to Set the Project Environment and Replicate Results
@@ -121,27 +246,27 @@ Experimenting with different `world_size` values in *AWS Step Functions with Lam
 This section provides a detailed tutorial for setting up the project environment and replicating the results. Follow the steps below to ensure proper configuration and execution.
 
 ### 1. Using AWS SageMaker
-1. Download the two files `Setup_Dependencies.ipynb` and `Update_IAM_Roles_And_Policies.ipynb` inside `How to Set the Project Environment and Replicate Results`
-2. Run the `Setup_Dependencies.ipynb` notebook to install all necessary dependencies and configure the environment.
-3. Use the `Update_IAM_Roles_And_Policies.ipynb` notebook to configure the necessary IAM roles and policies.
+  1. Download the two files `Setup_Dependencies.ipynb` and `Update_IAM_Roles_And_Policies.ipynb` inside `How to Set the Project Environment and Replicate Results`
+  2. Run the `Setup_Dependencies.ipynb` notebook to install all necessary dependencies and configure the environment.
+  3. Use the `Update_IAM_Roles_And_Policies.ipynb` notebook to configure the necessary IAM roles and policies.
 
 ### 2. Setting Up AWS S3
-1. Navigate to the S3 service in your AWS Management Console.
-2. Create a new bucket that will host your Python scripts and store results.
-3. Inside the bucket:
+  1. Navigate to the S3 service in your AWS Management Console.
+  2. Create a new bucket that will host your Python scripts and store results.
+  3. Inside the bucket:
    - Create a folder named `scripts`.
    - Create another folder named `result`.
 
 ### 3. Download the Project Files
-1. **Download the required files**:
+  1. **Download the required files**:
    Navigate to the `How to Set the Project Environment and Replicate Results` folder in this repository and download the folders **'aws'**, **'code'**, and **'data'** this includes all scripts for preprocessing, inference, and configuration.
-2. **Copy the Anomaly Detection folder**:
+  2. **Copy the Anomaly Detection folder**:
    Inside the downloaded files, locate the `Anomaly Detection` folder under `code` and upload it to the `scripts` folder in your S3 bucket.
 
 ### 4. Setting Up AWS Lambda Functions
-1. Navigate to the AWS Lambda service in your AWS Management Console.
-2. Create a Lambda function for executing the fmi_executor payloads.
-3. Configure the Lambda function to process the scripts uploaded to the `scripts` folder in your S3 bucket.
+  1. Navigate to the AWS Lambda service in your AWS Management Console.
+  2. Create a Lambda function for executing the fmi_executor payloads.
+  3. Configure the Lambda function to process the scripts uploaded to the `scripts` folder in your S3 bucket.
 
 ### 5. Creating and Running AWS Step Functions
 To facilitate serverless inference for the Astronomy AI model, this project uses an AWS Step Function. The Step Function orchestrates multiple AWS Lambda functions and processes a payload to execute tasks. Follow the steps below to set up and execute the state machine.
@@ -195,10 +320,10 @@ aws/
 - `inference.py` and `inference_FMI.py`: Handle the inference tasks, including model execution and data processing.
 
 #### Setting Up the Step Function
-1. Navigate to the AWS Step Functions service in the AWS Management Console.
-2. Create a new state machine named `cosmicai`.
-3. Upload and configure the Lambda functions (from the `lambda` folder) to the state machine.
-4. Edit the input payload for the state machine as follows:
+  1. Navigate to the AWS Step Functions service in the AWS Management Console.
+  2. Create a new state machine named `cosmicai`.
+  3. Upload and configure the Lambda functions (from the `lambda` folder) to the state machine.
+  4. Edit the input payload for the state machine as follows:
 
 ```json
 {
@@ -211,13 +336,13 @@ aws/
 }
 ```
 
-5. Update the payload fields to match your S3 bucket and file paths.
-6. Save the state machine configuration and ensure all necessary resources (Lambda, S3) are properly linked.
+  5. Update the payload fields to match your S3 bucket and file paths.
+  6. Save the state machine configuration and ensure all necessary resources (Lambda, S3) are properly linked.
 
 #### Executing the State Machine
-1. Select the `cosmicai` state machine in the Step Functions console.
-2. Click the Execute button to run the state machine with the configured input payload.
-3. Monitor the execution to verify the results and troubleshoot if needed.
+  1. Select the `cosmicai` state machine in the Step Functions console.
+  2. Click the Execute button to run the state machine with the configured input payload.
+  3. Monitor the execution to verify the results and troubleshoot if needed.
 
 #### Viewing Execution Logs
 Navigate to the AWS CloudWatch service in the AWS Management Console.
@@ -230,10 +355,22 @@ Use the provided script (`collect_lambda_logs.py`) to automate the retrieval of 
 
 ## Conclusion
 
+### Step Function Conclusion
+
 Our findings showed that altering the `world_size` parameter has a considerable influence on both execution time and costs. For example, when we set the `world_size` to 2, the Step Function time was 3.1 seconds, but raising the `world_size` to 24 resulted in a duration of more than 5.6 seconds, even though more parallel processing was occurring. This shows that, after a certain point, increased parallelism creates overhead, resulting in inefficiencies rather than speed advantages.
 
 These insights may be useful to anyone looking to optimize *AWS Step Functions with Lambda* for similar operations, as knowing this balance is critical for improving both performance and cost-efficiency.
 
 To improve the program, we would investigate methods to decrease the cost of larger `world_size` setups, such as improving Lambda function coordination or dynamically allocating resources.
+
+### Cosmic AI Conclusion
+
+The **Cosmic AI** analysis underscores the trade-offs between performance and cost-efficiency across batch sizes 256, 512, and 1024. Based on the results, **batch size 512** is recommended for most workloads due to its optimal balance of speed, memory usage, and cost-efficiency. It achieves a moderate execution time (**2.90 seconds**) and the lowest memory usage (**645 MB max memory**) while maintaining a billed duration (**11.67 seconds**) close to the fastest batch size, 256. These attributes make batch size 512 a versatile choice for a wide range of tasks, especially when cost and performance need to be balanced.
+
+**Batch size 256**, on the other hand, is the fastest option, with an execution time of just **1.22 seconds** and the highest sample throughput (**209.85 samples per second**, as shown in the graph *"Avg. Sample per Second by Total Load Size"*). This makes it ideal for time-sensitive applications or scenarios where low latency is critical. However, its higher billed duration (**12.58 seconds**) and memory usage (**1960 MB max memory**) can lead to increased costs in long-running workloads, reducing its cost-effectiveness compared to batch size 512.
+
+**Batch size 1024** demonstrates the highest inefficiencies, with the slowest execution time (**7.46 seconds**) and the lowest sample throughput (**137.25 samples per second**, as shown in the graph *"Avg. Sample per Second by Total Load Size"*). Additionally, it incurs the highest memory usage (**3,350 MB max memory**) and the longest billed duration (**13.97 seconds**, as shown in the graph *"Duration and Billed Duration by Batch Size"*), making it unsuitable for most practical applications. While it can process the largest number of samples per batch, this configuration's high resource demands and slow performance make it the least cost-efficient option.
+
+These findings emphasize the importance of selecting the appropriate batch size based on workload requirements. Batch size **512** offers the best balance for most use cases, combining reasonable speed with efficient memory and cost management. Batch size **256** is suitable for real-time or low-latency tasks but comes with increased memory and billing overhead. Meanwhile, batch size **1024** should be avoided unless specific tasks demand processing very large batches where resource and cost trade-offs are acceptable.
 
 ---
