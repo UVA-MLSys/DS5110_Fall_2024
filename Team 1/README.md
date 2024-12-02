@@ -24,6 +24,8 @@
   - [Model Training](#model-training)
   - [Evaluation Metrics](#evaluation-metrics)
 - [Beyond the Original Specifications](#beyond-the-original-specifications)
+  -[Step Function Specifications](#step-function-specifications)
+  -[Cosmic AI Specifications](#cosmic-ai-specifications)
 - [Results](#results)
   - [Step Function](#Step-Function)
   - [Cosmic AI](#Cosmic-AI)
@@ -105,9 +107,14 @@ The descriptions of the primary metrics used during the evaluation of the predic
 
 ## Beyond the Original Specifications
 
+### Step Function Specifications
+
 We went beyond the project's initial scope by experimenting with different `world_size` parameters in *AWS Step Function with Lambda*. This allowed us to observe how changing the number of parallel processes affected both performance and cost efficiency.
 
 Testing alternative `world_size` parameters helps determine the best configuration for our dataset, resulting in improved scalability and resource utilization. Additionally, we leveraged a *team group chat* for regular communication to coordinate our tasks, share insights, and manage project tasks.
+
+### Cosmic AI Specifications
+
 
 ---
 
