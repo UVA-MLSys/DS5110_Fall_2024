@@ -97,11 +97,11 @@ The descriptions of the primary metrics used during the evaluation of the predic
 - **Bias**: Measures the average residuals between predicted and true values, indicating any systematic over- or underestimation in predictions.
 - **Precision**: Represents the expected scatter of errors, reflecting the consistency of the model's predictions.
 - **R² Score**: Evaluates how well the model predicts compared to the mean of true values; a value closer to 1 indicates better predictive performance.
-- **Execution Time (seconds/batch)**: Measured the time taken to process a batch of data. Batch size 256 was the fastest (**1.22 seconds**), while batch size 1024 was the slowest (**7.46 seconds**).
-- **Billed Duration (seconds)**: Reflected the total time billed for processing a batch. Batch size 512 had the lowest billed duration (**11.67 seconds**), demonstrating its cost efficiency compared to batch sizes 256 (**12.58 seconds**) and 1024 (**13.97 seconds**).
-- **Max Memory Used (MB)**: Indicated peak memory usage during processing. Batch size 512 required significantly less memory (**645 MB**) compared to 256 (**1960 MB**) and 1024 (**3350 MB**), showing superior resource utilization.
-- **Sample Throughput (samples/second)**: Captured the number of samples processed per second. Batch size 256 achieved the highest throughput (**209.85 samples/second**), with batch sizes 512 (**176.36 samples/second**) and 1024 (**137.25 samples/second**) trailing behind.
-- **Total CPU Time (seconds)**: Quantified the overall CPU time consumed during batch processing. Batch size 256 used the least CPU time (**4.88 seconds**), while 1024 consumed the most (**7.41 seconds**).
+- **Execution Time (seconds/batch)**: Measured the time taken to process a batch of data.
+- **Billed Duration (seconds)**: Reflected the total time billed for processing a batch. 
+- **Max Memory Used (MB)**: Indicated peak memory usage during processing.
+- **Sample Throughput (samples/second)**: Captured the number of samples processed per second. 
+- **Total CPU Time (seconds)**: Quantified the overall CPU time consumed during batch processing. 
 
 ---
 
