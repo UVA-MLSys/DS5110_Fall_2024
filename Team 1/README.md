@@ -53,6 +53,7 @@
 This project focuses on creating scalable and efficient data processing pipelines using the AWS Step Function with Lambda. Our objective is to investigate and implement critical data processing techniques on a model training problem that includes ensuring the system is optimized for both performance and cost-efficiency. Under typical data pipeline approaches, this process would include data cleaning, outlier removal, and other pre-processing steps. By leveraging parallel Lambda executions and varying workload parameters (like world_size), the project sought to improve scalability and resource utilization. 
 
 We aim to gain a better grasp of AWS capabilities and how to use them to optimize operations while keeping costs low and efficiency high. Our goal is to create a functional pipeline that will increase our ability to manage massive datasets, automate operations, and deploy machine learning models effectively.
+
 ---
 
 ## Problem Statement
