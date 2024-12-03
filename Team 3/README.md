@@ -13,7 +13,9 @@ Our project involves enhancing an existing AWS Step Function that runs FMI Lambd
 There will be two stages for this project. The first will be benchmarking the Step Functions without any data present. The second will use astronomy data to test the Step Function.
 
 The dataset we are using is Sloan Digital Sky Survey (SDSS), a prominent astronomical survey. It can be found on the [AI-for-Astronomy github](https://github.com/UVA-MLSys/AI-for-Astronomy). It contains 1,253 images of celestial objects. Each image includes magnitudes in five color bands (u, g, r, i, z) and redshift targets information. The original images were at a resolution of 64x64 pixels then the images were cropped to 32x32 pixels. For the initial lambda function, we used a portion of the total data available, so  our first trials would not require parallelization. 
+
 The data was stored in a structural format, with images organized as arrays (32 x 32 pixels) and corresponding metadata, such as magnitude values and redshift targets, which are most likelyd stored in tabular formatting like CSV, Pandas DataFrame.  
+
 According to the GitHub, The data for the AstroMAE project was carefully prepared to ensure it was ready for training. First, the 64 × 64-pixel images were cropped to 32 × 32 pixels to fit the model's requirements. Data cleaning was done to make sure all images and their related information were correctly matched and consistent. The pixel values and magnitude data were normalized so everything was on the same scale. Corrupted or invalid data, like missing values or extreme redshift targets, were removed to improve the model's performance. Lastly, the data was divided into training, validation, and test sets to check how well the model works. These steps ensured the data was high-quality and ready to train AstroMAE. 
 
 ## Experimental Design:
