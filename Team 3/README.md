@@ -140,7 +140,7 @@ The cost formula: ​
 
      15.6×0.00001667×10=0.00260292 USD​
      
-4. **Total Cost​**:
+3. **Total Cost​**:
 
 Total Step Functions Cost: 0.00015 USD​
 
