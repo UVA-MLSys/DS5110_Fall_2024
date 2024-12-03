@@ -18,6 +18,15 @@ The data was stored in a structural format, with images organized as arrays (32 
 
 According to the GitHub, The data for the AstroMAE project was carefully prepared to ensure it was ready for training. First, the 64 × 64-pixel images were cropped to 32 × 32 pixels to fit the model's requirements. Data cleaning was done to make sure all images and their related information were correctly matched and consistent. The pixel values and magnitude data were normalized so everything was on the same scale. Corrupted or invalid data, like missing values or extreme redshift targets, were removed to improve the model's performance. Lastly, the data was divided into training, validation, and test sets to check how well the model works. These steps ensured the data was high-quality and ready to train AstroMAE. 
 
+## Inference.PY
+![Inference](inference.jpg)
+# Scatter Plot (Predicted vs. True)
+
+- High density along the diagonal line (accurate predictions)
+- Some scatter at higher values
+- Overall, strong alignment with ideal prediction line
+
+
 ## Experimental Design:
 
 Within the prebuilt State Machine on AWS, we set up the Step Function that will later be used to run Lambda functions. This Step Function can have changes in payloads and the number of parallel Lambda functions they run. We ran 3 experiments to 3 payloads, invoking 2, 4, 16 parallel lambdas.  
