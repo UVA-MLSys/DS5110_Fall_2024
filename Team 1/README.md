@@ -22,6 +22,7 @@
 - [Experiment Process](#experiment-process)
   - [Data Pre-Processing](#data-pre-processing)
   - [Model Training](#model-training)
+  - [Step Function Execution](#step-function-execution)
   - [Evaluation Metrics](#evaluation-metrics)
 - [Beyond the Original Specifications](#beyond-the-original-specifications)
   -[Step Function Specifications](#step-function-specifications)
@@ -49,17 +50,16 @@
 
 ## Introduction
 
-This project focuses on creating scalable and efficient data processing pipelines using the *AWS Step Function with Lambda*. Our objective is to investigate and implement critical data processing techniques such as cleaning, outlier removal, pre-processing, and model training while ensuring the system is optimized for both performance and cost-efficiency. By leveraging parallel Lambda executions and varying workload parameters (like `world_size`), the project sought to improve scalability and resource utilization.
+This project focuses on creating scalable and efficient data processing pipelines using the AWS Step Function with Lambda. Our objective is to investigate and implement critical data processing techniques on a model training problem that includes ensuring the system is optimized for both performance and cost-efficiency. Under typical data pipeline approaches, this process would include data cleaning, outlier removal, and other pre-processing steps. By leveraging parallel Lambda executions and varying workload parameters (like world_size), the project sought to improve scalability and resource utilization. 
 
-We aim to get a better grasp of AWS capabilities and how to use them to optimize operations while keeping costs low and efficiency high. Our goal is to create a functional pipeline that will increase our ability to manage massive datasets, automate operations, and deploy machine learning models effectively.
-
+We aim to gain a better grasp of AWS capabilities and how to use them to optimize operations while keeping costs low and efficiency high. Our goal is to create a functional pipeline that will increase our ability to manage massive datasets, automate operations, and deploy machine learning models effectively.
 ---
 
 ## Problem Statement
 
-The goal of this project is to design and implement a scalable data processing and machine learning pipeline using AWS tools to explore insights from an astronomical dataset. The project requires end-to-end processing of the dataset, starting with data pre-processing, cleaning, and outlier removal to ensure high-quality inputs for analysis. The cleaned dataset is then saved and processed through a program that performs inference using a machine learning model.
+The goal of this project is to design and implement a scalable data processing and machine learning pipeline using AWS tools to explore insights from an astronomical dataset. The project requires end-to-end processing of the dataset, starting with data pre-processing, cleaning, and outlier removal to ensure high-quality inputs for analysis. The cleaned dataset is then saved and processed through an executed python-program that performs inference using a machine learning model.
 
-The problem we aim to address involves efficiently handling large-scale astronomical data while maintaining cost and time efficiency. This includes leveraging AWS services like SageMaker for development and execution, S3 for data storage, Step Functions for workflow orchestration, Lambda for scalable computing, and CloudWatch for monitoring and debugging.
+The problem we aim to address involves efficiently handling large-scale astronomical data while maintaining cost and time efficiency. This includes leveraging AWS services like SageMaker for development and reporting, S3 for data storage, Step Functions for workflow orchestration, Lambda for scalable computing, and CloudWatch for monitoring and debugging.
 
 By addressing this issue, the initiative hopes to achieve the following:
 
@@ -68,7 +68,7 @@ By addressing this issue, the initiative hopes to achieve the following:
   - Present results in a clear and insightful manner through tables and visualizations.
   - Identify and optimize resource utilization to ensure the solution is cost-effective and adaptable to real-world scenarios.
 
-The significance of this project goes beyond its technological execution, since the insights gained from the data and the techniques utilized may be applied to other large-scale datasets in fields such as astronomy, healthcare, and others. This project offers a hands-on chance to investigate the challenges and rewards of developing strong, scalable pipelines for processing and analyzing complicated data.
+The significance of this project goes beyond its technological execution and predictive outputs, since the insights gained from the data structure and the techniques utilized may be applied to other large-scale datasets in fields such as astronomy, healthcare, and others. This project offers a hands-on chance to investigate the challenges and rewards of developing strong, scalable pipelines for processing and analyzing complicated data.
 
 ---
 
@@ -76,7 +76,7 @@ The significance of this project goes beyond its technological execution, since 
 
 The model that is used for redshift prediction is pre-trained as "a vision transformer encoder on Sloan Digital Sky Survey (SDSS) images to capture general patterns" and is then fine-tuned "with a specialized architecture for redshift prediction." This approach leverages the power of transfer learning, where the model first learns generalizable features from a vast collection of SDSS images and then adapts to the specific task of predicting redshift. This fine-tuning step enables the model to focus on intricate patterns and relationships within the dataset, such as the correlation between photometric magnitudes and redshift.
 
-The SDSS dataset includes images with "corresponding magnitude values for the five photometric bands (u, g, r, i, z) and redshift targets." Each image is meticulously processed to ensure compatibility with the model's requirements, including cropping from 64 × 64 pixels to 32 × 32 pixels for input optimization. The magnitude values represent measurements of brightness across different wavelengths, which, combined with the image data, provide a rich and multi-dimensional view of celestial objects. This combination of image and numerical data ensures a comprehensive approach to redshift prediction, enhancing the model's ability to generalize across diverse astronomical objects.
+The SDSS dataset includes images with "corresponding magnitude values for the five photometric bands (u, g, r, i, z) and redshift targets." Each image is meticulously processed to ensure compatibility with the model's requirements, including cropping from 64 x 64 pixels to 32 x 32 pixels for input optimization. The magnitude values represent measurements of brightness across different wavelengths, which, combined with the image data, provide a rich and multi-dimensional view of celestial objects. This combination of image and numerical data ensures a comprehensive approach to redshift prediction, enhancing the model's ability to generalize across diverse astronomical objects.
 
 The use of a vision transformer model is particularly significant for this task, as it excels in capturing spatial and contextual relationships in image data, making it well-suited for the analysis of celestial phenomena. By integrating both visual and numerical modalities, this methodology represents a cutting-edge approach in astrophysics, showcasing the potential of machine learning in advancing our understanding of the universe.
 
@@ -85,13 +85,16 @@ The use of a vision transformer model is particularly significant for this task,
 ## Experiment Process
 
 ### Data Pre-Processing
-The design process begins with a dataset like AI-for-Astronomy. The dataset will be cleaned, with missing values handled and outliers detected to assure quality. The cleaned data is then saved as a CSV file and transferred to an S3 bucket for further processing.
+The design process begins with a dataset like AI-for-Astronomy. The dataset will be cleaned, with missing values handled and outliers detected to assure quality. The cleaned data is then saved as a CSV file and transferred to an S3 bucket for further processing. In support of parallel distribution within the AWS Step Function, source data is broken up into different directory folders by size configuration within S3 (e.g., 10MB, 25MB, etc.). This allows our team to run inference executions under varying data workload and batch sizes for performance investigation. 
 
 ### Model Training
 We next create a *Step Function* that calls an *AWS Lambda* function to execute data processing operations like data loading and machine learning model training. Once the model has completed its run, the results are recorded and shown in tables and visualizations for easy interpretation. Throughout the process, testing and validation are carried out to ensure the outputs' dependability and correctness.
 
+### Step Function Execution 
+Parameters associated with execution pipeline may be altered within the Lambda Payload of the AWS Step Function, including Batch Size, World Size and directory paths across S3 bucket locations. Our team investigated changes across these various parameters and observed their impacts to execution performance and stability.  
+
 ### Evaluation Metrics
-The descriptions of the primary metrics used during the evaluation of the prediction of redshift are reproduced below:
+Descriptions of the primary metrics used during the evaluation including redshift model prediction and AWS Step Function performance are noted below: 
 - **Mean Absolute Error (MAE)**: Measures the average magnitude of the errors between predicted and true values, providing insight into prediction accuracy.
 - **Mean Square Error (MSE)**: Quantifies the average of squared errors, emphasizing larger deviations to highlight significant prediction errors.
 - **Bias**: Measures the average residuals between predicted and true values, indicating any systematic over- or underestimation in predictions.
@@ -109,18 +112,34 @@ The descriptions of the primary metrics used during the evaluation of the predic
 
 ### Step Function Specifications
 
-We went beyond the project's initial scope by experimenting with different `world_size` parameters in *AWS Step Function with Lambda*. This allowed us to observe how changing the number of parallel processes affected both performance and cost efficiency.
+We went beyond the project's initial scope by experimenting with different `world_size` parameters in the AWS Step Function with Lambda process. This allowed us to observe how changing the number of parallel processes affected both performance and cost efficiency. 
 
-Testing alternative `world_size` parameters helps determine the best configuration for our dataset, resulting in improved scalability and resource utilization. Additionally, we leveraged a *team group chat* for regular communication to coordinate our tasks, share insights, and manage project tasks.
+Testing alternative `world_size` parameters helped determine the best configuration for our dataset, resulting in improved scalability and resource utilization. We worked in the AWS CloudWatch reporting module to understand how output log files are structured and accessed. Using a team developed exploratory Jupyter-Notebook, we were able to ingest CloudWatch Log exports then isolate our teams executed Lambda Functions to capture performance metrics for reporting and review. Additionally, we leveraged a eam group chat for regular communication to coordinate our tasks, share insights, and manage project tasks. 
 
 ### Cosmic AI Specifications
+The primary specification asked for the successful execution of the Cosmic AI Inference model within an AWS Step Function and to evidence our team's ability to capture and assess performance metrics for scalability.  
 
+ As a step beyond this requirement, our team: 
+
+ - 1. Designed and implemented our own AWS State Machine and S3 bucket environments. This allowed for separate Step Function execution and tracking, as well as separate bucket configuration for source data, Python files, and output capture.  
+
+ - 2. Modification of the ‘inference.py’ model file to alter the Batch Size parameter for performance investigation and review. This entailed saving several versions of the model with each representing a different batch size update. 
+
+ - 3. Modification of the World_Size parameter set in the Lambda Payload, as well as other key payload inputs to assess performance impact and stability.  
+
+ - 4. Execution of the primary inference model using parallel distribution based on S3 data separation. This involved using the ‘DataParallel-CosmicAI’ Step Function but altering the Lambda Payload json code to connect the execution to our team’s ‘team-one-cosmic-data’ S3 Bucket for data sourcing, model .py files and reporting directories. We modified the World_Size parameter within the Lambda Payload code to adjust for the number of files to process, which allowed us to investigate performance impact associated with data size, while placing the data through a distributed processing design.  
+
+ - 5. Development of exploratory Jupyter-Notebooks to a) consolidate performance json file outputs that were designed and saved down by the inference model code and b) to assist with the isolation and reporting of our team’s Step Function executions based on saved CloudWatch log .csv records.  
+
+ - 6. Visualization of performance metrics using Seaborn/Python code.  
 
 ---
 
 ## Results
 
-### Step Function
+### Step Function [Mid-Project Execution]
+
+The following results were captured from our initial run of the inference model on AWS, without parallel distribution of the data.
 
 | World Size | Lambda Init Duration (sec) | MapState Duration (sec) | Step Function Duration (sec) |
 |------------|----------------------------|-------------------------|------------------------------|
@@ -134,9 +153,19 @@ Experimenting with different `world_size` values in *AWS Step Functions with Lam
 
 ![Setup](Pics/inference-setup.png "Setup")
 
+#### Performance Monitoring 
+
+Upon monitoring for successful completion (see workflow graph), we reviewed execution metrics captured in the CloudWatch Logs, under the FMI_Executor log group (via Python filters). The following table outlines results for Rank 0 and 1 nodes.  
+
+![Workflow Graph](Pics/Step_Function_Workflow.jpg.png "Workflow Graph")
+
 ### Cosmic AI
 
-**Inference Results**
+The Cosmic AI section represents execution of the inference model using our team’s ‘Cosmic_AI_Team_One’ Step Function/State Machine and ‘team-one-s3-cosmic’ S3 bucket. This section also captures our performance of parallel distribution using the ‘DataParallel-CosmicAI’ Step Function and our team’s ‘team-one-cosmic-data’ S3 bucket.  
+
+The following results showcase performance from execution of the ‘Inference’ model itself, as well as execution of the entire AWS Step Function from end-to-end.  
+
+**Inference Results – CPU Execution**
 
 | Batch Size | Total Batches | Total CPU Run Time (sec) | Total CPU Memory (Mb) | Execution Time (sec) | Sample Size per Second |
 |------------|---------------|--------------------------|-----------------------|-----------------------|-----------------------|
@@ -172,15 +201,17 @@ The following JSON files provide the raw data used to calculate the results in t
 - **Batch Size 1024**:  
   While batch size 1024 processes the samples in a single batch, it suffers from the slowest execution time per batch (**7.46 seconds**) and the lowest sample size per second (**137.25**). Its higher total memory usage (**14,330.32 MB**) makes it less suitable for both time-sensitive and cost-efficient applications.
 
+**Inference Results – Parallel Distribution**
+![Parallel Distribution](Pics/Parallel_Distribution.png)
+
 ---
 
 **Cloud Watch**
 
-| Batch Size | Full Duration (sec) | Billed Duration (sec) | Max Memory Used (MB) | Init Duration (sec) |
-|------------|---------------------|-----------------------|----------------------|---------------------|
-| 256        | 11.88               | 12.58                 | 1960                 | 0.699               |
-| 512        | 10.79               | 11.67                 | 645                  | 0.878               |
-| 1024       | 12.96               | 13.97                 | 3350                 | 1.006               |
+Performance of the end-to-end AWS Step Function execution: 
+
+#### CloudWatch Results Table
+![Cloudwatch Results Table](Pics/Cloudwatch_Results.png.png)
 
 #### Graph: Duration and Billed Duration by Batch Size
 ![Duration and Billed Duration](Pics/Results_Billed.png)
@@ -229,7 +260,9 @@ Batch size **1024** performs poorly in almost every category. Its slow execution
 - Batch size **512** achieves the best balance overall, reducing memory usage significantly without a substantial increase in billed duration or execution time.
 
 ---
-### **Correlations Between Inference and Cloud Watch Data**
+### **Correlations Between Inference and Step Function Execution**
+Observations between execution of the model (based on coded metric reporting) and the entire workflow as capture from the CloudWatch reporting logs.  
+
 - **Memory Usage**: Total CPU memory in inference results remains nearly constant across batch sizes, while max memory usage in Cloud Watch data varies significantly. Batch size **512** stands out with the lowest memory requirement.
 - **Execution Time and Billed Duration**: Longer execution times directly correlate with higher billed durations, as seen in batch size **1024**, which has the highest values for both metrics.
 
@@ -242,6 +275,9 @@ Batch size **1024** performs poorly in almost every category. Its slow execution
 ---
 
 ### **Key Takeaways**
+
+
+
 - **Best Overall Choice**: Batch size **512** achieves the best balance, offering a reasonable trade-off between speed and memory usage while keeping costs manageable. It is recommended for most workloads where a combination of speed and cost-efficiency is critical.
 - **Best for Speed**: Batch size **256** excels in speed and throughput, making it the preferred choice for real-time or low-latency applications. However, its higher memory usage and longer billed duration may increase operational costs.
 - **Worst Choice**: Batch size **1024** underperforms across almost all metrics, with slower execution times, lower throughput, and significantly higher memory usage. It is best avoided unless the workload specifically benefits from processing large batches.
