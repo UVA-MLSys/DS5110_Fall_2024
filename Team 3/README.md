@@ -102,3 +102,48 @@ Summary:
 
 9. **Self CPU Memory (MB)**: The memory specifically used by the CPU for this operation is 10.510 MB, which is a relatively small portion compared to the total memory used.
 
+## COST Summary
+1. **Step Functions Cost**:For a single execution, we have 2 state transitions at a cost of $0.025 per 1,000 state transitions.​
+
+Number of State Transitions (per execution): 2​
+
+Number of State Transitions (for 3 executions): 2×3 = 6​
+
+Cost for State Transitions: (6/1000) ×0.025 = 0.00015 USD​
+  
+2. **AWS Lambda Cost**:
+
+Requests Cost​
+
+For each execution, the Lambda function is invoked once, so for 3 executions:​
+
+Number of Requests: 1×3 = 3​
+
+Price per Request: $0.20 per million requests​
+
+Cost for Requests: (3/1,000,000) ×0.20 = 0.0000006 USD​
+
+
+Duration Cost​
+
+Billed Duration per execution is 5200 ms, 3 executions:​
+
+    3×5200 ms = 15,600 ms/1000 = 15.6 seconds​
+
+Memory Size of 10,240 MB = 10,240/1024 = 10 GB​
+
+The Price per GB-Second for AWS Lambda is typically $0.00001667.​
+
+The cost formula: ​
+
+  Cost=Billed Duration (in seconds)×Price per GB-Second×Memory Size (in GB)​
+
+     15.6×0.00001667×10=0.00260292 USD​
+     
+4. **Total Cost​**:
+
+Total Step Functions Cost: 0.00015 USD​
+
+Total Lambda Cost: ​0.0000006+0.00260292 = 0.00260352 USD​
+
+Total Execution Cost for 3 Executions: ​0.00015 + 0.00260352 = 0.00275352 USD​
