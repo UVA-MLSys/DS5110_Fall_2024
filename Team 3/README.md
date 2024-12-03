@@ -6,11 +6,14 @@ Kanitta, Karthika, Chi, Aqsa
 
 ## Introduction: 
 
-We have a pre-existing AWS Step function to run FMI lambda functions. With this, we will build a system that can scale within a strict budget. We hope to learn about FMI functions, AWS, and system/data parallelization. After all this has been completed, we would like to create a meaningful application with data.  
+Our project involves enhancing an existing AWS Step Function that runs FMI Lambda functions, focusing on creating a scalable, budget-friendly system. Through this work, we aim to deepen our knowledge of FMI functions, AWS services, and approaches to system and data parallelization. Ultimately, we plan to apply these insights to develop a practical, data-driven application. For practical insights, we are using AstroMAE, a new system for predicting redshift, which is how astronomers measure the distance and speed of galaxies as the universe expands. AstroMAE uses advanced machine learning techniques, such as masked encoders, to analyze images from space, making predictions more accurate than older methods. This part of the project shows how we can apply cutting-edge tools to solve real-world problems in astronomy.   
 
 ## The Data:
 
 There will be two stages for this project. The first will be benchmarking the Step Functions without any data present. The second will use astronomy data to test the Step Function
+The dataset we are using is Sloan Digital Sky Survey (SDSS), a prominent astronomical survey. It contains 1,253 images of celestial objects. Each image includes magnitudes in five color bands (u, g, r, i, z) and redshift targets information. The original images were at a resolution of 64x64 pixels then the images were cropped to 32x32 pixels. For the initial lambda function, we used a portion of the total data available, so  our first trials would not require parallelization. 
+The data was stored in a structural format, with images organized as arrays (32 x 32 pixels) and corresponding metadata, such as magnitude values and redshift targets, which are most likelyd stored in tabular formatting like CSV, Pandas DataFrame.  
+According to the GitHub, The data for the AstroMAE project was carefully prepared to ensure it was ready for training. First, the 64 × 64-pixel images were cropped to 32 × 32 pixels to fit the model's requirements. Data cleaning was done to make sure all images and their related information were correctly matched and consistent. The pixel values and magnitude data were normalized so everything was on the same scale. Corrupted or invalid data, like missing values or extreme redshift targets, were removed to improve the model's performance. Lastly, the data was divided into training, validation, and test sets to check how well the model works. These steps ensured the data was high-quality and ready to train AstroMAE. 
 
 ## Experimental Design:
 
@@ -46,6 +49,10 @@ The cost benchmarking for the lambda function with no data is noted.
 | Total                        | 2.37       |
 
 
+The performance benchmarking revealed that the CPU achieved its best time at a world size of 3 with 11.224 ms, though timings fluctuated for larger sizes due to resource contention. On the GPU, the best performance was observed at a world size of 32 with 12.251 ms, but processing times increased as world sizes grew, reaching 49.760 ms at a world size of 200. 
+
+Regarding costs, AWS Step Functions incurred a minimal charge of $0.00015 USD for 3 executions with 2 state transitions each. AWS Lambda added $0.00260352 USD, combining request and duration costs for 15.6 seconds of execution with a 10 GB memory allocation. The total execution cost for 3 runs was $0.00275352 USD, demonstrating the system's cost efficiency alongside its scalability. 
+
 ## Testing: 
 
 The team went through the AWS set up of the Step Function. Once set up was complete, we changed the world size several times, and tracked the time. Results are presented above. Overall costs were taken. 
@@ -53,6 +60,10 @@ The team went through the AWS set up of the Step Function. Once set up was compl
 ## Conclusions: 
 
 Overall, the cost of running a Lambda function on AWS is very small, but it's not nothing. It will be interesting to see how costs and time change with the addition of data. 
+
+The results show that CPUs perform better for smaller tasks, while GPUs are more efficient for handling larger tasks, though the time cost increases as the workload grows. This information helps others decide when to use CPUs for lighter tasks and GPUs for more computationally intensive ones. 
+
+To improve the system, we could add a feature that automatically switches between CPUs and GPUs depending on the task size. We could also use GPUs more effectively by running tasks in parallel to speed up large jobs. Adding automatic scaling would help balance costs and performance. Lastly, improving how data is handled would make processing faster on both CPUs and GPUs, making the system more efficient for different tasks.  
 
 
 ## How to set the project environment and replicate the results
