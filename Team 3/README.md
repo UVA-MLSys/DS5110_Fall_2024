@@ -20,7 +20,7 @@ According to the GitHub, The data for the AstroMAE project was carefully prepare
 
 ## Inference.PY
 ![Inference](inference.jpg)
-# Scatter Plot (Predicted vs. True)
+### Scatter Plot (Predicted vs. True)
 
 - High density along the diagonal line (accurate predictions)
 - Some scatter at higher values
@@ -111,9 +111,9 @@ Summary:
 
 9. **Self CPU Memory (MB)**: The memory specifically used by the CPU for this operation is 10.510 MB, which is a relatively small portion compared to the total memory used.
 
-# Cost Summary
+## Cost Summary
 
-## Step Functions Cost
+### Step Functions Cost
 - **State Transitions (per execution)**: 2 state transitions
 - **Cost per 1,000 state transitions**: $0.025
 - **Total state transitions for 3 executions**:  
@@ -123,9 +123,9 @@ Summary:
 
 ---
 
-## AWS Lambda Cost
+### AWS Lambda Cost
 
-### 1. Requests Cost
+#### 1. Requests Cost
 - **Number of requests**: 1 per execution
 - **Total requests for 3 executions**:  
   `1 × 3 = 3`
@@ -133,7 +133,7 @@ Summary:
 - **Cost for requests**:  
   `(3 / 1,000,000) × 0.20 = 0.0000006 USD`
 
-### 2. Duration Cost
+#### 2. Duration Cost
 - **Billed duration per execution**: 5,200 ms
 - **Total duration for 3 executions**:  
   `3 × 5,200 ms = 15,600 ms`
@@ -146,7 +146,7 @@ Summary:
 
 ---
 
-## Total Cost
+### Total Cost
 - **Total Step Functions Cost**: 0.00015 USD
 - **Total Lambda Cost**:  
   `0.0000006 + 0.00260292 = 0.00260352 USD`
