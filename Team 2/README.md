@@ -16,7 +16,8 @@ This was the original trials just to get familiar with step function and state m
 
 Step by Step Procedure:
 1. Log into AWS and search for step functions.
-2. Clone cosmicai state machine. ![image](https://github.com/user-attachments/assets/f2b62b34-3857-4a13-84b0-a96c4694ea2c)
+2. Clone cosmicai state machine.
+![image](https://github.com/user-attachments/assets/6e00a7ee-eb3a-43c4-9db9-5d4866146156)
 
 3. Clone cosmicai2 S3 bucket as well.
 4. For relatively low world sizes, you would not have to change the script. Just use the regular inference.py
