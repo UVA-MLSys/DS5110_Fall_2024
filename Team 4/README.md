@@ -1,6 +1,5 @@
 # Team 4 Semester Project
 
-* homogenous and hetergeonous optmizaion, miles and Kharil
 
 
 <a href="https://github.com/psf/black/blob/main/LICENSE"><img alt="License: MIT" src="https://black.readthedocs.io/en/stable/_static/license.svg"></a>
@@ -16,18 +15,7 @@ Development done locally using both Windows/Mac and tested at scale using Linux 
 
 Code style and choices are for our code not the submodule `AI-for-Astronomy` which is separately maintained.
 
-## Progress
 
-Currently we are exploring <span style="color: #FFA07A;">Scaling</span>
-
-```mermaid
-graph LR
-    A[1 - Step Functions - MIDTERM] --> D
-    B[2 - Rendezvous Server] --> D
-    C[3 - AI for Astronomy Inference] --> D[4 - Cosmic AI with Lambda FMI]
-    D --> E[5 - Testing at Scale]
-    style E fill:#FFA07A
-```
 
 ## Repo structure
 
@@ -51,11 +39,11 @@ graph LR
 ## Table of Contents
 
 - [Team 4 Semester Project](#team-4-semester-project)
-  - [Progress](#progress)
   - [Repo structure](#repo-structure)
   - [Table of Contents](#table-of-contents)
   - [Group Members](#group-members)
   - [Definitions](#definitions)
+  - [Steps Taken and Assumptions](#steps-taken-and-assumptions)
   - [1: Step Functions](#1-step-functions)
     - [`Introduction`](#introduction)
     - [Step Function Experimental Design](#step-function-experimental-design)
@@ -73,7 +61,11 @@ graph LR
     - [4 Steps](#4-steps)
     - [4 Results](#4-results)
   - [5: Parallel Execution and Scale](#5-parallel-execution-and-scale)
-    - [Baseline](#baseline)
+  - [Results](#results-1)
+    - [Testing Step Functions](#testing-step-functions)
+    - [Local Baseline Testing](#local-baseline-testing)
+    - [Lambda Performance Summary](#lambda-performance-summary)
+  - [Testing at Scale Experimental Design](#testing-at-scale-experimental-design)
 
 ## Group Members
 
@@ -117,6 +109,10 @@ Taken from the AWS Developer Guide - [here](https://docs.aws.amazon.com/step-fun
 > a **series of event-driven steps**.
 >
 > Each step in a workflow is called a state.
+
+## Steps Taken and Assumptions
+
+<details><summary>Steps taken and assumptions</summary>
 
 ## 1: Step Functions
 
@@ -422,37 +418,7 @@ Results of the collective reduce operation are post to the S3 Bucket's result fo
 
 ### 4 Results
 
-```json
-# example of `Results.json` output
-# TODO: replace with a valid run
-
-{
-    "total_cpu_time (seconds)": 5.814478928000014,
-    "total_cpu_memory (MB)": 14320.256568,
-    "execution_time (seconds/batch)": 2.907239464000007,
-    "num_batches": 2,
-    "batch_size": 512,
-    "device": "cpu",
-    "throughput_bps": 28910559.67036082,
-    "sample_persec": 176.11208376194455,
-    "cpu_info": {
-        "processor": "x86_64",
-        "architecture": [
-            "64bit",
-            "ELF"
-        ],
-        "machine": "x86_64",
-        "system": "Linux",
-        "platform": "Linux-5.10.227-239.884.amzn2.x86_64-x86_64-with-glibc2.35"
-    },
-    "ram_info (GB)": 10.455680847167969,
-    "avg_profile": "<FunctionEventAvg key=Total self_cpu_time=2.229s cpu_time=375.273us  self_cuda_time=0.000us cuda_time=0.000us input_shapes= cpu_memory_usage=14320256568 cuda_memory_usage=0>",
-    "self_cpu_memory (MB)": 10.510336
-}
-
-```
-
-</details>
+see the bucket Group4-cosmicai on the Class S3 instance
 
 ## 5: Parallel Execution and Scale
 
@@ -460,12 +426,58 @@ Now that we have a Baseline its time to test at scale
 
 there has already been quite a bit of work done here.
 
-### Baseline
+</details>
+
+</details>
+
+## Results
 
 Some Research already done by the TA [aws/](https://github.com/UVA-MLSys/AI-for-Astronomy/tree/main/aws)
 
-Varying data size, already available in Class Bucket
+### Testing Step Functions
 
-We run the inference for different sizes to evaluate the scaling performance with increasing data load. This experiment runs with size 1GB, 2GB, 4GB, 6GB, 8GB, 10GB and 12.6GB.
 
-TODO: fill out results and runs
+* Using FMI state machines, we were able to successfully deploy a relatively cheap infrastructure to build our POC and simulate a real deployment​
+
+* Accounting for some variability in startup costs (in either direction), and variability in cloud infrastructure, the provisioning of these systems is Tn=𝜽(log(n))​
+
+This is evidenced in the graph to the below, mapping world size to runtime​
+This provides us with a cheap and easy way to scale​
+
+![Step Function Graph](docs/imgs/step_functions_results.png)
+
+The modular design allowed us to seamlessly leverage other AWS services, including most importantly Lambda and S3​
+
+The flexibility of the state machine enabled us to experiment with key parameters which proved the scalability of the infrastructure​
+
+
+### Local Baseline Testing
+
+![Local Baseline Testing](docs/imgs/Local_Baseline_testing.png)
+
+* Increasing the Batch Size decreased  the total CPU time and total memory used (less passes) but had diminishing returns on effectiveness​
+
+* The point before diminishing return was either 1024 or 2048, more testing would be needed due to natural variability of runs.​
+
+* The baseline data was ~64M
+
+### Lambda Performance Summary
+
+
+![Lambda Performance Summary](docs/imgs/lambda_performance_summary.png)
+
+
+## Testing at Scale Experimental Design
+
+The system proved to be cost-efficient by scaling work across multiple Lambda instances​
+
+Costs decreased as batch sizes increased as a result of reduced overhead​
+
+Even with varying batch sizes and dataset sizes, our experiments generally showed consistent scaling performance​
+
+Overall, our infrastructure proved scalable and efficient for processing large datasets, validating its applicability for real-world use cases
+
+
+ ![Experimental Design](docs/imgs/testing_at_scale_experimental_design.png)
+
+![more results](docs/imgs/more_results.png)
