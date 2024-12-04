@@ -14,6 +14,13 @@ We created three State Machine trials/executions​ and updated 'world_size' par
 
 This was the original trials just to get familiar with step function and state machines. We later performed this on the actual astronomy data. We cloned the cosmicai state function and executed the state machines on the astronomy data. We did three initial trials with different world sizes of 1, 10, and 100 and measured changes in duration and other metrics.
 
+Step by Step Procedure:
+1. Log into AWS and search for step functions.
+2. Clone cosmicai state machine.
+3. Clone cosmicai2 S3 bucket as well.
+5. Upload payload with bucket, scripts you want to use, and world size. To reproduce our results, execute with 1, 10, and 100.
+6. Wait for execution. Duration will show up.
+7. Following completion, go into you S3 bucket and then into folder 0.
 
 ## Beyond the original specifications:
 We used both the CPU and GPU for our duration measurements for CosmicAI. Created a file called inference-cuda.py that uses GPU.
