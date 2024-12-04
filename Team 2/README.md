@@ -18,9 +18,12 @@ Step by Step Procedure:
 1. Log into AWS and search for step functions.
 2. Clone cosmicai state machine.
 3. Clone cosmicai2 S3 bucket as well.
+4. For relatively low world sizes, you would not have to change the script. Just use the regular inference.py
 5. Upload payload with bucket, scripts you want to use, and world size. To reproduce our results, execute with 1, 10, and 100.
 6. Wait for execution. Duration will show up.
-7. Following completion, go into you S3 bucket and then into folder 0.
+7. Following completion, go into you S3 bucket, results folder, and then into folder 0. Results.json will have your metrics.
+8. Most likely, a world size of a 100 will not run. To fix this, you can create a copy of inference.py, and specify cuda instead of cpu.
+9. Specify this script in your payload as well, and then re-run, which should execute successfully.
 
 ## Beyond the original specifications:
 We used both the CPU and GPU for our duration measurements for CosmicAI. Created a file called inference-cuda.py that uses GPU.
