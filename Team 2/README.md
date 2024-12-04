@@ -59,6 +59,25 @@ We didn't do any additional testing. Our team simply obtaining results of the du
 
 We definitely noticed a correlation between Lambda Function and Duration. However, understanding how the metrics for cloudwatch calculations would be helpful. We also obtained some costs from the billing and colst management tool on AWS. However, finding a way to measure the costs of individual executions would be helpful if possible.
 
+
+### Astronomy Inference Results:
+#### Resulting Density Scatter plot
+![image](https://github.com/user-attachments/assets/28e1d78a-1612-4123-ad34-24361e9c918d)
+
+#### Conclusions from scatter plot
+High Prediction Accuracy: The density scatter plot indicates high accuracy in redshift predictions, particularly in the lower redshift ranges, with most data points clustering near the diagonal line suggesting correct predictions aligning with actual values.​
+
+Areas for Model Improvement: Despite the overall success, there are outliers in the predictions, which could be addressed by investigating and enhancing data preprocessing, feature engineering, or model complexity.​
+
+#### Resulting System CPU and Memory Info
+![image](https://github.com/user-attachments/assets/25424236-7079-44ff-9ad5-cbe9a81a9dfb)
+
+#### Conclusions from CPU and Memory Info
+Efficient Resource Utilization: CPU usage was at 17.7% and low memory usage at 38.2%, indicating that the inference process is not resource-intensive and efficient​
+
+Potential for Scaling: Given the current system's available memory (70.41 GB) and the efficient distribution of computational load across CPU cores, there is potential for scaling the model.​
+
+
 ### Cosmic AI Results
 #### Duration
 World Size       |  Duration (cpu)  |  Duration (gpu)
