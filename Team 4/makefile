@@ -7,10 +7,10 @@
 ## builds the virtual environment and attaches it to the ipykernel to be used
 build_venv:
 	pip install --upgrade pip;
-	python3.11 -m venv .venv;
+	python3.10 -m venv .venv;
 	source .venv/bin/activate && pip install -r requirements.txt;
 	source .venv/bin/activate && pip install ipykernel
-	source .venv/bin/activate && python3.11 -m ipykernel install --user --name=.venv;
+	source .venv/bin/activate && python3.10 -m ipykernel install --user --name=.venv;
 
 # boto is being weird
 ## runs the package tests
