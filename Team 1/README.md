@@ -43,7 +43,7 @@
     - [Executing the State Machine](#executing-the-state-machine)
     - [Viewing Execution Logs](#viewing-execution-logs)
 - [Conclusion](#conclusion)
-  - [Step Fucntion Conclusion](#step-function-conclusion)
+  - [Step Function Conclusion](#step-function-conclusion)
   - [Cosmic-AI Conclusion](#cosmic-ai-conclusion)
 
 ---
@@ -158,7 +158,7 @@ Experimenting with different `world_size` values in *AWS Step Functions with Lam
 
 Upon monitoring for successful completion (see workflow graph), we reviewed execution metrics captured in the CloudWatch Logs, under the FMI_Executor log group (via Python filters). The following table outlines results for Rank 0 and 1 nodes.  
 
-![Workflow Graph](Pics/Step_Function_Workflow.jpg.png "Workflow Graph")
+![Workflow Graph](Pics/Step_Function_Workflow.jpg "Workflow Graph")
 
 ### Cosmic AI
 
@@ -212,7 +212,7 @@ The following JSON files provide the raw data used to calculate the results in t
 Performance of the end-to-end AWS Step Function execution: 
 
 #### CloudWatch Results Table
-![Cloudwatch Results Table](Pics/Cloudwatch_Results.png.png)
+![Cloudwatch Results Table](Pics/Cloudwatch_Results.png)
 
 #### Graph: Duration and Billed Duration by Batch Size
 ![Duration and Billed Duration](Pics/Results_Billed.png)
@@ -233,7 +233,7 @@ Performance of the end-to-end AWS Step Function execution:
 
 ### **Insights and Use Case Recommendations**
 
-#### **1. Strength and Weaknesses:**
+#### **1. Strengths and Weaknesses:**
 
  **Batch Size 256**
 - ***Strengths***: Achieves the fastest execution time per batch (**1.22 seconds**) and the highest sample size processed per second (**209.85**). These metrics make it ideal for time-sensitive applications where rapid processing is crucial.
