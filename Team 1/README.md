@@ -174,11 +174,6 @@ The following results showcase performance from execution of the ‘Inference’
 | 512        | 2             | 5.81                     | 14320.20              | 2.90                  | 176.36                |
 | 1024       | 1             | 7.41                     | 14330.32              | 7.46                  | 137.25                |
 
-#### Graph: Avg. Execution Time by Total Load Size
-![Avg Execution Time](Pics/Results_Batch_Exe.png)
-
-#### Graph: Avg. Sample per Second by Total Load Size
-![Avg Sample Per Second](Pics/Results_Sample_Exe.png)
 
 #### JSON Data Sources for Inference Results
 The following JSON files provide the raw data used to calculate the results in the table above:
@@ -202,8 +197,17 @@ The following JSON files provide the raw data used to calculate the results in t
 - **Batch Size 1024**:  
   While batch size 1024 processes the samples in a single batch, it suffers from the slowest execution time per batch (**7.46 seconds**) and the lowest sample size per second (**137.25**). Its higher total memory usage (**14,330.32 MB**) makes it less suitable for both time-sensitive and cost-efficient applications.
 
-**Inference Results – Parallel Distribution**
+### Inference Results – Parallel Distribution
+
+#### Graph: Parallel Distribution Table Results
 ![Parallel Distribution](Pics/Parallel_Distribution.png)
+
+#### Graph: Avg. Execution Time by Total Load Size
+![Avg Execution Time](Pics/Results_Batch_Exe.png)
+
+#### Graph: Avg. Sample per Second by Total Load Size
+![Avg Sample Per Second](Pics/Results_Sample_Exe.png)
+
 
 ---
 
