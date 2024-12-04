@@ -212,7 +212,7 @@ The following JSON files provide the raw data used to calculate the results in t
 Performance of the end-to-end AWS Step Function execution: 
 
 #### CloudWatch Results Table
-![Cloudwatch Results Table](Pics/Cloudwatch_Results.png.png)
+![Cloudwatch Results Table](Pics/Cloudwatch_Results.png)
 
 #### Graph: Duration and Billed Duration by Batch Size
 ![Duration and Billed Duration](Pics/Results_Billed.png)
