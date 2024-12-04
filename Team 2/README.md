@@ -26,7 +26,7 @@ Step by Step Procedure:
 9. Specify this script in your payload as well, and then re-run, which should execute successfully.
 
 ## Beyond the original specifications:
-We used both the CPU and GPU for our duration measurements for CosmicAI. Created a file called inference-cuda.py that uses GPU.
+We used both the CPU and GPU for our duration measurements for CosmicAI. Created a file called inference-cuda.py that uses GPU. Those are attached to this github.
 
 ## Results:
 
