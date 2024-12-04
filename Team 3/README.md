@@ -111,44 +111,64 @@ Summary:
 
 9. **Self CPU Memory (MB)**: The memory specifically used by the CPU for this operation is 10.510 MB, which is a relatively small portion compared to the total memory used.
 
-## Cost Summary
+
+## Cost Summary for 11 Executions
 
 ### Step Functions Cost
-- **State Transitions (per execution)**: 2 state transitions
-- **Cost per 1,000 state transitions**: $0.025
-- **Total state transitions for 3 executions**:  
-  `2 × 3 = 6`
-- **Cost for state transitions**:  
-  `(6 / 1000) × 0.025 = 0.00015 USD`
-
----
+- **State Transitions (per execution):** 2 state transitions
+- **Total state transitions for 11 executions:**
+  ```
+  2 × 11 = 22
+  ```
+- **Cost per 1,000 state transitions:** $0.025
+- **Cost for state transitions:**
+  ```
+  (22 / 1000) × 0.025 = 0.00055 USD
+  ```
 
 ### AWS Lambda Cost
-
 #### 1. Requests Cost
-- **Number of requests**: 1 per execution
-- **Total requests for 3 executions**:  
-  `1 × 3 = 3`
-- **Price per request**: $0.20 per million requests
-- **Cost for requests**:  
-  `(3 / 1,000,000) × 0.20 = 0.0000006 USD`
+- **Number of requests per execution:** 1
+- **Total requests for 11 executions:**
+  ```
+  1 × 11 = 11
+  ```
+- **Price per request:** $0.20 per million requests
+- **Cost for requests:**
+  ```
+  (11 / 1,000,000) × 0.20 = 0.0000022 USD
+  ```
 
 #### 2. Duration Cost
-- **Billed duration per execution**: 5,200 ms
-- **Total duration for 3 executions**:  
-  `3 × 5,200 ms = 15,600 ms`
-- **Convert to seconds**:  
-  `15,600 ms / 1000 = 15.6 seconds`
-- **Memory size**: 10,240 MB (10 GB)
-- **Price per GB-second**: $0.00001667
-- **Cost for duration**:  
-  `15.6 × 0.00001667 × 10 = 0.00260292 USD`
-
----
+- **Billed duration per execution:** 5,200 ms
+- **Total duration for 11 executions:**
+  ```
+  11 × 5,200 ms = 57,200 ms
+  ```
+- **Convert to seconds:**
+  ```
+  57,200 ms / 1000 = 57.2 seconds
+  ```
+- **Memory size:** 10,240 MB (10 GB)
+- **Price per GB-second:** $0.00001667
+- **Cost for duration:**
+  ```
+  57.2 × 0.00001667 × 10 = 0.00953524 USD
+  ```
 
 ### Total Cost
-- **Total Step Functions Cost**: 0.00015 USD
-- **Total Lambda Cost**:  
-  `0.0000006 + 0.00260292 = 0.00260352 USD`
-- **Total Cost for 3 Executions**:  
-  `0.00015 + 0.00260352 = 0.00275352 USD`
+- **Total Step Functions Cost:**
+  ```
+  0.00055 USD
+  ```
+- **Total Lambda Cost:**
+  ```
+  0.0000022 + 0.00953524 = 0.00953744 USD
+  ```
+- **Total Cost for 11 Executions:**
+  ```
+  0.00055 + 0.00953744 = 0.01008744 USD
+  ```
+
+So, the total cost for **11 executions** is **0.01008744 USD**.
+
