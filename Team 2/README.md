@@ -107,7 +107,7 @@ CPU time and Execution time per batch increases with hieger world size. Total la
 World Size       |  Lambda Requests |  Execution Time (s) | Memory (GB) | Lambda Cost ($)  | Step Funciton Cost ($) | Total Cost ($) 
 -----------------|------------------|---------------------------------------------------------------------------------------------------
 1                |  10.695          |  5.749              |     1       |          1       |             1          |
-10               |  14.895          |  5.762              |      1      |           1      |              1         |
-100              |  Error           |  44.717             |       1     |          1       |             1          | 
+10               |  14.895          |  5.762              |     1       |          1       |             1          |
+100              |  Error           |  44.717             |     1       |          1       |             1          | 
 
 
