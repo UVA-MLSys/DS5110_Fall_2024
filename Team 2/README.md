@@ -103,4 +103,11 @@ Testing inolved simply gathering the Cosmic AI results above and comparing the d
 
 CPU time and Execution time per batch increases with hieger world size. Total lambda cost increases with world size. Steop function cost remains constant as state transitions is constant.
 
+#### Cost 
+World Size       |  Lambda Requests |  Execution Time (s) | Memory (GB) | Lambda Cost ($)  | Step Funciton Cost ($) | Total Cost ($) 
+-----------------|------------------|---------------------------------------------------------------------------------------------------
+1                |  10.695          |  5.749
+10               |  14.895          |  5.762
+100              |  Error           |  44.717
+
 
