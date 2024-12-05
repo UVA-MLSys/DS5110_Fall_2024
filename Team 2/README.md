@@ -51,6 +51,12 @@ Lambda Functions    |  Duration
 
 Duration/Runtime seemed to increase as the number of lambda functions increased.
 
+#### Cost 
+World Size       |  Lambda Requests |  Execution Time (s) | Memory (GB) | Lambda Cost ($)  | Step Funciton Cost ($) | Total Cost ($) 
+-----------------|------------------|---------------------|-------------|------------------|------------------------|-------------------
+1                |  2               |  2.445              |     10      |    0.0008156     |         0.0001         |  0.0009156
+10               |  2               |  2.846              |     10      |    0.0009496     |         0.0001         |  0.0010496
+
 #### Testing: 
 
 We didn't do any additional testing. Our team simply obtaining results of the duration. In addition, we did look at cloudwatch duration and max memory used. 
@@ -103,10 +109,6 @@ Testing inolved simply gathering the Cosmic AI results above and comparing the d
 
 CPU time and Execution time per batch increases with hieger world size. Total lambda cost increases with world size. Steop function cost remains constant as state transitions is constant.
 
-#### Cost 
-World Size       |  Lambda Requests |  Execution Time (s) | Memory (GB) | Lambda Cost ($)  | Step Funciton Cost ($) | Total Cost ($) 
------------------|------------------|---------------------|-------------|------------------|------------------------|-------------------
-1                |  2               |  2.445              |     10      |    0.0008156     |         0.0001         |  0.0009156
-10               |  2               |  2.846              |     10      |    0.0009496     |         0.0001         |  0.0010496
+
 
 
