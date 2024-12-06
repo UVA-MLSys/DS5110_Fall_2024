@@ -1,0 +1,13 @@
+timestamp,message
+1732214149782,"INIT_START Runtime Version: python:3.12.v38	Runtime Version ARN: arn:aws:lambda:us-east-1::runtime:7515e00d6763496e7a147ffa395ef5b0f0c1ffd6064130abb5ecde5a6d630e86
+"
+1732214149888,"START RequestId: d564df8c-b68f-4ee5-80de-11bc53e7ee55 Version: $LATEST
+"
+1732214149889,"receiving event:  {'bucket': 'team-one-s3-cosmic', 'world_size': '1', 'object_type': 'folder', 'S3_object_name': 'scripts/Anomaly Detection', 'data_path': '/tmp/scripts/Anomaly Detection/Inference/resized_inference.pt', 'script': '/tmp/scripts/Anomaly Detection/Inference/inference_batch1024.py'}
+"
+1732214149905,"renzdezvous connection successful!
+"
+1732214149907,"END RequestId: d564df8c-b68f-4ee5-80de-11bc53e7ee55
+"
+1732214149907,"REPORT RequestId: d564df8c-b68f-4ee5-80de-11bc53e7ee55	Duration: 18.95 ms	Billed Duration: 19 ms	Memory Size: 128 MB	Max Memory Used: 34 MB	Init Duration: 103.98 ms	
+"

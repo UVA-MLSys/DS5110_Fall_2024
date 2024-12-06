@@ -1,0 +1,741 @@
+@timestamp,@message,@logStream,@log
+2024-11-26 16:25:14.565,"END RequestId: fe5cfefb-6e98-4e56-9662-edc18841b3d1
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:14.565,"REPORT RequestId: fe5cfefb-6e98-4e56-9662-edc18841b3d1	Duration: 12606.91 ms	Billed Duration: 13836 ms	Memory Size: 10240 MB	Max Memory Used: 2865 MB	Init Duration: 1228.99 ms	
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:14.563,"executed script
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.600,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.600,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.600,"engine(args)
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.600,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.600,"inference(
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.600,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.600,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.600,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.546,"END RequestId: 41ff7714-5c72-4d2d-b590-eeb2e59bd155
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.546,"REPORT RequestId: 41ff7714-5c72-4d2d-b590-eeb2e59bd155	Duration: 11988.23 ms	Billed Duration: 12906 ms	Memory Size: 10240 MB	Max Memory Used: 2837 MB	Init Duration: 917.59 ms	
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.543,"executed script
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.423,"END RequestId: cf9234fb-b0d7-4f2c-959c-1bc359068478
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.423,"REPORT RequestId: cf9234fb-b0d7-4f2c-959c-1bc359068478	Duration: 11855.42 ms	Billed Duration: 12796 ms	Memory Size: 10240 MB	Max Memory Used: 2852 MB	Init Duration: 939.67 ms	
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.421,"executed script
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.295,"END RequestId: 0670e1c6-fa0e-4f7a-a316-59f40e4ab621
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.295,"REPORT RequestId: 0670e1c6-fa0e-4f7a-a316-59f40e4ab621	Duration: 11571.60 ms	Billed Duration: 12602 ms	Memory Size: 10240 MB	Max Memory Used: 2820 MB	Init Duration: 1029.70 ms	
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.294,"executed script
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.210,"END RequestId: eb680fee-a74a-42cc-a65d-21a592230318
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.210,"REPORT RequestId: eb680fee-a74a-42cc-a65d-21a592230318	Duration: 11782.33 ms	Billed Duration: 12574 ms	Memory Size: 10240 MB	Max Memory Used: 2850 MB	Init Duration: 791.44 ms	
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:13.209,"executed script
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.986,"END RequestId: 489d2dd0-fca5-4531-abc8-66bb29b69972
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.986,"REPORT RequestId: 489d2dd0-fca5-4531-abc8-66bb29b69972	Duration: 11651.44 ms	Billed Duration: 12395 ms	Memory Size: 10240 MB	Max Memory Used: 2866 MB	Init Duration: 743.29 ms	
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.985,"executed script
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.816,"END RequestId: 27f37f76-9d9c-4986-b4d5-a8787452694f
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.816,"REPORT RequestId: 27f37f76-9d9c-4986-b4d5-a8787452694f	Duration: 11292.46 ms	Billed Duration: 12245 ms	Memory Size: 10240 MB	Max Memory Used: 2812 MB	Init Duration: 952.30 ms	
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.813,"executed script
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.537,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.537,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.536,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.536,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.536,"engine(args)
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.536,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.536,"inference(
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.536,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.518,"END RequestId: 07c74476-9ae1-44c1-8dac-ecdcfd85ede7
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.518,"REPORT RequestId: 07c74476-9ae1-44c1-8dac-ecdcfd85ede7	Duration: 11198.84 ms	Billed Duration: 11956 ms	Memory Size: 10240 MB	Max Memory Used: 2839 MB	Init Duration: 756.54 ms	
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.516,"executed script
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.496,"END RequestId: bc51b301-6c63-49fe-b988-72e32d8ffd80
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.496,"REPORT RequestId: bc51b301-6c63-49fe-b988-72e32d8ffd80	Duration: 10250.95 ms	Billed Duration: 10951 ms	Memory Size: 10240 MB	Max Memory Used: 2826 MB	Init Duration: 699.97 ms	
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.495,"executed script
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.422,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.422,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.421,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.421,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.421,"engine(args)
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.421,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.421,"inference(
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.421,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.373,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.373,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.373,"engine(args)
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.373,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.373,"inference(
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.373,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.373,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.373,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.114,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.114,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.114,"engine(args)
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.114,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.114,"inference(
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.114,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.114,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.114,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.011,"engine(args)
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.011,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.011,"inference(
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.011,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.011,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.011,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.010,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:12.010,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.925,"END RequestId: fdc0b18f-4a45-4241-9dfa-bc637fca384f
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.925,"REPORT RequestId: fdc0b18f-4a45-4241-9dfa-bc637fca384f	Duration: 10603.46 ms	Billed Duration: 11291 ms	Memory Size: 10240 MB	Max Memory Used: 2843 MB	Init Duration: 686.71 ms	
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.924,"executed script
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.866,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.866,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.866,"engine(args)
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.866,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.866,"inference(
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.866,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.866,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.866,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.571,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.571,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.571,"engine(args)
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.571,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.571,"inference(
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.571,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.571,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.571,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.547,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.547,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.546,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.546,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.546,"engine(args)
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.546,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.546,"inference(
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:11.546,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:10.793,"Traceback (most recent call last):
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:10.793,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 286, in <module>
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:10.793,"engine(args)
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:10.793,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 234, in engine
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:10.793,"inference(
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:10.793,"File ""/tmp/Anomaly Detection/Inference/inference_data_parallel.py"", line 163, in inference
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:10.793,"with open('Results.json', 'w') as json_file:
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:10.793,"OSError: [Errno 30] Read-only file system: 'Results.json'
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.997,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.997,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.960,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.960,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.960,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.960,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.960,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.949,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.949,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.924,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.924,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.910,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.910,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.910,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.910,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.910,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.886,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.886,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.876,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.876,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.854,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.854,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.839,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.839,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.820,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.820,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.805,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.805,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.790,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.790,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.790,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.771,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.771,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.741,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.741,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.741,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.599,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.599,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.561,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.560,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.560,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.560,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.560,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.530,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.530,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.495,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.495,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.461,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.461,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.461,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.460,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.460,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.426,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.426,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.411,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.411,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.400,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.400,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.400,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.397,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.397,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.376,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.376,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.376,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.376,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.376,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.358,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.358,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.358,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.358,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.358,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.347,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.347,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.344,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.344,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.322,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.322,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.313,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.313,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.309,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.309,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.309,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.309,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.309,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.304,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.304,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.290,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.290,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.275,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.275,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.273,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.273,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.248,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.248,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.247,"parsing args
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.247,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.246,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.246,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.245,"START RequestId: bc51b301-6c63-49fe-b988-72e32d8ffd80 Version: $LATEST
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.245,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '6', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/104.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.244,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.244,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.244,"s3key: Anomaly Detection/blocks/photoz.py path: /tmp/Anomaly Detection/blocks filename: photoz.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.244,"downloading key: Anomaly Detection/blocks/photoz.py to /tmp/Anomaly Detection/blocks/photoz.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.240,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.240,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.236,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.236,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.212,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.212,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.211,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.211,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.211,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.209,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.209,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.209,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.200,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.200,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.198,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.185,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.185,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.185,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.179,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.179,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.179,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.179,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.179,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.173,"downloading key: Anomaly Detection/blocks/model_vit_inception.py to /tmp/Anomaly Detection/blocks/model_vit_inception.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.172,"s3key: Anomaly Detection/Plots/ path: /tmp/Anomaly Detection/Plots filename: 
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.172,"creating os path: /tmp/Anomaly Detection/Plots
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.172,"s3key: Anomaly Detection/blocks/model_vit_inception.py path: /tmp/Anomaly Detection/blocks filename: model_vit_inception.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.172,"creating os path: /tmp/Anomaly Detection/blocks
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.166,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.166,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.144,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.144,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.135,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.135,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.135,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.131,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.131,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.131,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.131,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.119,"s3key: Anomaly Detection/Plot_Redshift.py path: /tmp/Anomaly Detection filename: Plot_Redshift.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.119,"downloading key: Anomaly Detection/Plot_Redshift.py to /tmp/Anomaly Detection/Plot_Redshift.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.100,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.100,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.085,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.085,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.078,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.078,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.069,"s3key: Anomaly Detection/NormalCell.py path: /tmp/Anomaly Detection filename: NormalCell.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.069,"downloading key: Anomaly Detection/NormalCell.py to /tmp/Anomaly Detection/NormalCell.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.062,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.062,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.048,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.048,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.043,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.043,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.031,"s3key: Anomaly Detection/Inference/inference_data_parallel.py path: /tmp/Anomaly Detection/Inference filename: inference_data_parallel.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.031,"downloading key: Anomaly Detection/Inference/inference_data_parallel.py to /tmp/Anomaly Detection/Inference/inference_data_parallel.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.010,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.010,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.004,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:02.004,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.981,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.981,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.981,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.979,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.979,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.963,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.963,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.963,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.961,"parsing args
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.961,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.958,"START RequestId: fe5cfefb-6e98-4e56-9662-edc18841b3d1 Version: $LATEST
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.958,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '9', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/107.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.954,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.954,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.954,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.942,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.942,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.942,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.940,"s3key: Anomaly Detection/Inference/inference.py path: /tmp/Anomaly Detection/Inference filename: inference.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.940,"downloading key: Anomaly Detection/Inference/inference.py to /tmp/Anomaly Detection/Inference/inference.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.910,"s3key: Anomaly Detection/Inference/__init__.py path: /tmp/Anomaly Detection/Inference filename: __init__.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.910,"creating os path: /tmp/Anomaly Detection/Inference
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.910,"downloading key: Anomaly Detection/Inference/__init__.py to /tmp/Anomaly Detection/Inference/__init__.py
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.853,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]f061137c82494c2a852de8d426ba1a43,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.819,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.819,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.819,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.790,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.790,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.790,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.757,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.756,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.756,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.726,"parsing args
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.726,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.724,"START RequestId: 0670e1c6-fa0e-4f7a-a316-59f40e4ab621 Version: $LATEST
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.724,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '7', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/105.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.664,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.664,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.664,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.585,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.585,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.585,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.572,"parsing args
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.572,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.568,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '1', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/10.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.567,"START RequestId: cf9234fb-b0d7-4f2c-959c-1bc359068478 Version: $LATEST
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.560,"parsing args
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.560,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.558,"START RequestId: 41ff7714-5c72-4d2d-b590-eeb2e59bd155 Version: $LATEST
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.558,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '3', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/101.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.549,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.549,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.549,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.530,"s3key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt path: /tmp/Anomaly Detection/Fine_Tune_Model filename: Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.530,"creating os path: /tmp/Anomaly Detection/Fine_Tune_Model
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.530,"downloading key: Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt to /tmp/Anomaly Detection/Fine_Tune_Model/Mixed_Inception_z_VITAE_Base_Img_Full_New_Full.pt
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.526,"parsing args
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.526,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.524,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '4', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/102.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.523,"START RequestId: 27f37f76-9d9c-4986-b4d5-a8787452694f Version: $LATEST
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.431,"parsing args
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.431,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.428,"START RequestId: eb680fee-a74a-42cc-a65d-21a592230318 Version: $LATEST
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.428,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '5', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/103.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.394,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]b70e567b847d48a384ba45fb45bbcb60,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.339,"parsing args
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.339,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.335,"START RequestId: 489d2dd0-fca5-4531-abc8-66bb29b69972 Version: $LATEST
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.335,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '2', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/100.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.324,"parsing args
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.324,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.322,"START RequestId: fdc0b18f-4a45-4241-9dfa-bc637fca384f Version: $LATEST
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.322,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '8', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/106.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.321,"parsing args
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.321,"executing script: Anomaly Detection
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.319,"START RequestId: 07c74476-9ae1-44c1-8dac-ecdcfd85ede7 Version: $LATEST
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.319,"received:  {'S3_BUCKET': 'team-one-cosmic-data', 'S3_OBJECT_NAME': 'Anomaly Detection', 'SCRIPT': '/tmp/Anomaly Detection/Inference/inference_data_parallel.py', 'S3_OBJECT_TYPE': 'folder', 'WORLD_SIZE': '10', 'RANK': '0', 'DATA_BUCKET': 'team-one-cosmic-data', 'DATA_PREFIX': '25MB', 'DATA_PATH': '25MB/1.pt', 'RESULT_PATH': 'result-partition-25MB/', 'BATCH_SIZE': 512}
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.221,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]36ccde0415e542988804388e07c76956,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.090,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]a2b5a53d45b740318c41b607b9cf332d,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:01.022,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]8b8c0cb0af6445308679d029d3ffd750,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:00.992,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]09e8d0cdf7ef4e2bbe16c516fd9dc7ec,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:00.971,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]8292b50e9e77424fbb1a1c3f4d1a1c4e,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:00.926,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]22a6446a6d05476297be7dfd28eaa743,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:00.869,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]6b81c1b0e7024fd1a495e42573e61f77,211125778552:/aws/lambda/cosmic-executor
+2024-11-26 16:25:00.856,"LD_LIBRARY_PATH: /fmi/python/build
+",2024/11/26/[$LATEST]7026f6d7426c42d98404c36422bbf425,211125778552:/aws/lambda/cosmic-executor
