@@ -15,8 +15,30 @@ We created three State Machine trials/executions​ and updated 'world_size' par
 This was the original trials just to get familiar with step function and state machines. We later performed this on the actual astronomy data. We cloned the cosmicai state function and executed the state machines on the astronomy data. We did three initial trials with different world sizes of 1, 10, and 100 and measured changes in duration and other metrics.
 
 
+## Step by Step Procedure to reproduce results:
+1. Log into AWS and search for step functions.
+2. Clone cosmicai state machine.
+3. Clone cosmicai2 S3 bucket as well.
+4. For relatively low world sizes, you would not have to change the script. Just use the regular inference.py
+5. Upload payload with bucket, scripts you want to use, and world size. To reproduce our results, execute with 1, 10, and 100.
+6. Wait for execution. Duration will show up.
+7. Following completion, go into you S3 bucket, results folder, and then into folder 0. Results.json will have your metrics.
+8. Most likely, a world size of a 100 will not run. To fix this, you can create a copy of inference.py, and specify cuda instead of cpu.
+9. Specify this script in your payload as well, and then re-run, which should execute successfully.
+
+These are how the state machines and S3 Buckets appear:
+
+  State Machine:
+
+  ![image](https://github.com/user-attachments/assets/82630cc5-cdf1-400b-955d-42712fc92472)
+
+
+  S3 Bucket
+
+  ![image](https://github.com/user-attachments/assets/063c55a3-1623-4062-81fc-6f29e286ee49)
+
 ## Beyond the original specifications:
-We used both the CPU and GPU for our duration measurements for CosmicAI. Created a file called inference-cuda.py that uses GPU.
+We used both the CPU and GPU for our duration measurements for CosmicAI. Created a file called inference-cuda.py that uses GPU. Those are attached to this github page.
 
 ## Results:
 
@@ -29,6 +51,12 @@ Lambda Functions    |  Duration
 
 Duration/Runtime seemed to increase as the number of lambda functions increased.
 
+#### Cost 
+World Size       |  Lambda Requests |  Execution Time (s) | Memory (GB) | Lambda Cost ($)  | Step Funciton Cost ($) | Total Cost ($) 
+-----------------|------------------|---------------------|-------------|------------------|------------------------|-------------------
+1                |  2               |  2.445              |     10      |    0.0008156     |         0.0001         |  0.0009156
+10               |  2               |  2.846              |     10      |    0.0009496     |         0.0001         |  0.0010496
+
 #### Testing: 
 
 We didn't do any additional testing. Our team simply obtaining results of the duration. In addition, we did look at cloudwatch duration and max memory used. 
@@ -36,6 +64,25 @@ We didn't do any additional testing. Our team simply obtaining results of the du
 #### Conclusions: 
 
 We definitely noticed a correlation between Lambda Function and Duration. However, understanding how the metrics for cloudwatch calculations would be helpful. We also obtained some costs from the billing and colst management tool on AWS. However, finding a way to measure the costs of individual executions would be helpful if possible.
+
+
+### Astronomy Inference Results:
+#### Resulting Density Scatter plot
+![image](https://github.com/user-attachments/assets/28e1d78a-1612-4123-ad34-24361e9c918d)
+
+#### Conclusions from scatter plot
+High Prediction Accuracy: The density scatter plot indicates high accuracy in redshift predictions, particularly in the lower redshift ranges, with most data points clustering near the diagonal line suggesting correct predictions aligning with actual values.​
+
+Areas for Model Improvement: Despite the overall success, there are outliers in the predictions, which could be addressed by investigating and enhancing data preprocessing, feature engineering, or model complexity.​
+
+#### Resulting System CPU and Memory Info
+![image](https://github.com/user-attachments/assets/25424236-7079-44ff-9ad5-cbe9a81a9dfb)
+
+#### Conclusions from CPU and Memory Info
+Efficient Resource Utilization: CPU usage was at 17.7% and low memory usage at 38.2%, indicating that the inference process is not resource-intensive and efficient​
+
+Potential for Scaling: Given the current system's available memory (70.41 GB) and the efficient distribution of computational load across CPU cores, there is potential for scaling the model.​
+
 
 ### Cosmic AI Results
 #### Duration
@@ -53,6 +100,7 @@ We cloned the cosmic ai state machine and ran executions with world sizes of 1, 
 ##### World Size 10
 ![Screenshot 2024-11-24 140939](https://github.com/user-attachments/assets/c22e8bf0-31c8-4f92-89b4-dafc40f2854a)
 
+
 #### Testing: 
 
 Testing inolved simply gathering the Cosmic AI results above and comparing the durations between the cpu and gpu.
@@ -60,5 +108,7 @@ Testing inolved simply gathering the Cosmic AI results above and comparing the d
 #### Conclusions:
 
 CPU time and Execution time per batch increases with hieger world size. Total lambda cost increases with world size. Steop function cost remains constant as state transitions is constant.
+
+
 
 
