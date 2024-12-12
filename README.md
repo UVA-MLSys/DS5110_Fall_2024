@@ -21,4 +21,8 @@ The proposed solution for this problem is the Cloud-based Astronomy Inference (C
 **Results:**
 Overall students found that using CAI showed good performance and was also cost-effective at the same time. 
 
-
+**Collaborators:**  
+Team 1: Dan Anthony, Harold Haugen,	George Shoriz, Zack Lisman  
+Team 2: Isidro Pride, Abhinandan Mekap, John Le  
+Team 3: Karthika Solai, Aqsa Majeed, Kanitta Srichan, Chi Do  
+Team 4: Ryan Healy, Nicholas Miller, Charles Lotane  
