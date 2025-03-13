@@ -31,7 +31,7 @@ ipykernel==6.29.5
 ipython==8.29.0
 isort==5.13.2
 jedi==0.19.2
-Jinja2==3.1.4
+Jinja2
 jmespath==1.0.1
 jupyter_client==8.6.3
 jupyter_core==5.7.2
