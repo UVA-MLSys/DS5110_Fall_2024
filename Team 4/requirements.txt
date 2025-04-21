@@ -91,9 +91,9 @@ tensorflow-io-gcs-filesystem==0.37.1
 termcolor==2.5.0
 timm==0.4.12
 tomlkit==0.13.2
-torch==2.5.1
+torch
 torch-summary==1.4.5
-torchvision==0.20.1
+torchvision
 tornado==6.4.2
 tqdm==4.67.1
 traitlets==5.14.3
